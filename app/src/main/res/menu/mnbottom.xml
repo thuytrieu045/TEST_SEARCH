@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/mnHome"
+        android:icon="@drawable/baseline_home_24"
+        android:title="Home" />
+    <item android:id="@+id/mnSearch"
+        android:icon="@drawable/baseline_search_24"
+        android:title="Search" />
+    <item android:id="@+id/mnShoppingCart"
+        android:icon="@drawable/baseline_add_shopping_cart_24"
+        android:title="Cart" />
+    <item android:id="@+id/mnAccount"
+        android:icon="@drawable/baseline_account_circle_24"
+        android:title="Account" />
+</menu>
