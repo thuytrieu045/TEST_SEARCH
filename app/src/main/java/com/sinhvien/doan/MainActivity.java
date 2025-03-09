@@ -41,9 +41,6 @@ public class MainActivity extends AppCompatActivity {
                 } else if (itemId == R.id.mnSearch) {
                     startActivity(new Intent(MainActivity.this, SearchActivity.class)); // Chuyển đến SearchActivity
                     return true;
-                } else if (itemId == R.id.mnShoppingCart) {
-                    startActivity(new Intent(MainActivity.this, CartActivity.class));
-                    return true;
                 } else if (itemId == R.id.mnAccount) {
                     startActivity(new Intent(MainActivity.this, AccountActivity.class));
                     return true;

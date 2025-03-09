@@ -15,9 +15,6 @@
 
         <activity android:name=".Category1Activity" android:exported="false" />
 
-        <!-- Thêm CartActivity vào đây -->
-        <activity android:name=".CartActivity" android:exported="true"/>
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
