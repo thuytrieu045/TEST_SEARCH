@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#f4e4d7"
+        android:padding="16dp">
+
+        <!-- Hình ảnh -->
+        <ImageView
+            android:id="@+id/imageViewMousseCake"
+            android:layout_width="match_parent"
+            android:layout_height="218dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/mousse_cake" />
+
+        <!-- Tiêu đề "Chuẩn bị" -->
+        <TextView
+            android:id="@+id/txtChuanBiMousseCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#a66a44"
+            android:padding="8dp"
+            android:text="Chuẩn bị:"
+            android:textSize="20sp"
+            android:textColor="@android:color/white" />
+
+        <!-- Độ khó & thời gian -->
+        <TextView
+            android:id="@+id/txtDoKhoMousseCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#c79a78"
+            android:padding="8dp"
+            android:text="Độ khó: Trung bình   Thời gian: 120p"
+            android:textSize="20sp" />
+
+        <!-- Danh sách nguyên liệu -->
+        <TextView
+            android:id="@+id/txtNguyenLieuMousseCake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Kem tươi 250 ml\n2. Sô-cô-la đen 150 gr\n3. Gelatin 5 gr\n4. Đường 50 gr\n5. Sữa tươi 100 ml\n6. Trứng gà 2 quả"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/txtBuocMousseCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#a66a44"
+            android:padding="8dp"
+            android:text="Bước làm: "
+            android:textSize="20sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txtB1MousseCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#804c29"
+            android:padding="8dp"
+            android:text="Bước 1: Đun chảy sô-cô-la"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txtNDB1MousseCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d9b9a3"
+            android:padding="8dp"
+            android:text="Đun sữa ấm, thêm gelatin rồi đổ vào sô-cô-la để tạo hỗn hợp mịn." />
+
+        <TextView
+            android:id="@+id/txtB2MousseCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#804c29"
+            android:padding="8dp"
+            android:text="Bước 2: Đánh kem tươi"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txtNDB2MousseCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d9b9a3"
+            android:padding="8dp"
+            android:text="Đánh bông kem tươi rồi trộn nhẹ với hỗn hợp sô-cô-la." />
+
+        <TextView
+            android:id="@+id/txtB3MousseCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#804c29"
+            android:padding="8dp"
+            android:text="Bước 3: Đổ khuôn và làm lạnh"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txtNDB3MousseCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d9b9a3"
+            android:padding="8dp"
+            android:text="Đổ vào khuôn và để lạnh 4-6 giờ trước khi thưởng thức." />
+
+        <Button
+            android:id="@+id/btnSaveMousseCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#a66a44"
+            android:text="Lưu"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/btnBackMousseCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#804c29"
+            android:text="Quay lại"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+</ScrollView>

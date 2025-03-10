@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#f4e4d7"
+        android:padding="16dp">
+
+        <!-- Hình ảnh -->
+        <ImageView
+            android:id="@+id/imageViewChocolateCake"
+            android:layout_width="match_parent"
+            android:layout_height="218dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/chocolate_cake" />
+
+        <!-- Tiêu đề "Chuẩn bị" -->
+        <TextView
+            android:id="@+id/txtChuanBiChocolateCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#a66a44"
+            android:padding="8dp"
+            android:text="Chuẩn bị:"
+            android:textSize="20sp"
+            android:textColor="@android:color/white" />
+
+        <!-- Độ khó & thời gian -->
+        <TextView
+            android:id="@+id/txtDoKhoChocolateCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#c79a78"
+            android:padding="8dp"
+            android:text="Độ khó: Dễ   Thời gian: 60p"
+            android:textSize="20sp" />
+
+        <!-- Danh sách nguyên liệu -->
+        <TextView
+            android:id="@+id/txtNguyenLieuChocolateCake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Bột mì 200 gr\n2. Bột cacao 50 gr\n3. Đường 150 gr\n4. Bơ 100 gr\n5. Trứng gà 2 quả\n6. Sữa tươi 150 ml\n7. Bột nở 1 muỗng cà phê\n8. Socola đun chảy 100 gr"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/txtBuocChocolateCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#a66a44"
+            android:padding="8dp"
+            android:text="Bước làm: "
+            android:textSize="20sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txtB1ChocolateCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#804c29"
+            android:padding="8dp"
+            android:text="Bước 1: Trộn nguyên liệu"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txtNDB1ChocolateCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d9b9a3"
+            android:padding="8dp"
+            android:text="Trộn đều bột mì, bột cacao và bột nở. Trong một tô khác, đánh bơ với đường cho mịn, sau đó thêm trứng, sữa và socola đun chảy." />
+
+        <TextView
+            android:id="@+id/txtB2ChocolateCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#804c29"
+            android:padding="8dp"
+            android:text="Bước 2: Nướng bánh"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txtNDB2ChocolateCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d9b9a3"
+            android:padding="8dp"
+            android:text="Đổ hỗn hợp vào khuôn, nướng ở 180°C trong 40 phút." />
+
+        <TextView
+            android:id="@+id/txtB3ChocolateCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#804c29"
+            android:padding="8dp"
+            android:text="Bước 3: Trang trí"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txtNDB3ChocolateCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d9b9a3"
+            android:padding="8dp"
+            android:text="Phủ socola đun chảy lên bánh hoặc trang trí với kem tươi và dâu tây." />
+
+        <Button
+            android:id="@+id/btnSaveChocolateCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#a66a44"
+            android:text="Lưu"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/btnBackChocolateCake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#804c29"
+            android:text="Quay lại"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+</ScrollView>

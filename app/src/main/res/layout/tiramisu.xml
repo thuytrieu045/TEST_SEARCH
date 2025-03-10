@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#f4e4d7"
+        android:padding="16dp">
+
+        <!-- Hình ảnh -->
+        <ImageView
+            android:id="@+id/imageViewTiramisu"
+            android:layout_width="match_parent"
+            android:layout_height="218dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/tiramisu" />
+
+        <!-- Tiêu đề "Chuẩn bị" -->
+        <TextView
+            android:id="@+id/txtChuanBiTiramisu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#a66a44"
+            android:padding="8dp"
+            android:text="Chuẩn bị:"
+            android:textSize="20sp"
+            android:textColor="@android:color/white" />
+
+        <!-- Độ khó & thời gian -->
+        <TextView
+            android:id="@+id/txtDoKhoTiramisu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#c79a78"
+            android:padding="8dp"
+            android:text="Độ khó: Trung bình   Thời gian: 45p"
+            android:textSize="20sp" />
+
+        <!-- Danh sách nguyên liệu -->
+        <TextView
+            android:id="@+id/txtNguyenLieuTiramisu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Mascarpone 250 gr\n2. Đường 100 gr\n3. Trứng gà 3 quả\n4. Cà phê đen 200 ml\n5. Bánh ladyfinger 12 cái\n6. Bột cacao 20 gr"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/txtBuocTiramisu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#a66a44"
+            android:padding="8dp"
+            android:text="Bước làm: "
+            android:textSize="20sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txtB1Tiramisu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#804c29"
+            android:padding="8dp"
+            android:text="Bước 1: Đánh kem"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txtNDB1Tiramisu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d9b9a3"
+            android:padding="8dp"
+            android:text="Đánh bông lòng đỏ trứng với đường, sau đó trộn cùng mascarpone." />
+
+        <TextView
+            android:id="@+id/txtB2Tiramisu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#804c29"
+            android:padding="8dp"
+            android:text="Bước 2: Xếp bánh"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txtNDB2Tiramisu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d9b9a3"
+            android:padding="8dp"
+            android:text="Nhúng bánh ladyfinger vào cà phê rồi xếp vào khuôn." />
+
+        <TextView
+            android:id="@+id/txtB3Tiramisu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#804c29"
+            android:padding="8dp"
+            android:text="Bước 3: Hoàn thiện"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txtNDB3Tiramisu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d9b9a3"
+            android:padding="8dp"
+            android:text="Phủ lớp kem mascarpone lên, tiếp tục xếp bánh và rắc bột cacao. Để lạnh 3 tiếng trước khi dùng." />
+
+        <Button
+            android:id="@+id/btnSaveTiramisu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#a66a44"
+            android:text="Lưu"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/btnBackTiramisu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#804c29"
+            android:text="Quay lại"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+</ScrollView>
