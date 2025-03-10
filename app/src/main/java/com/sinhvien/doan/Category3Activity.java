@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-public class Category1Activity extends AppCompatActivity {
+public class Category3Activity extends AppCompatActivity {
     private RecyclerView rvListC;
     private ProductAdapter productAdapter;
     private ArrayList<Product> lstProduct;
@@ -19,7 +19,7 @@ public class Category1Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_category1);
+        setContentView(R.layout.activity_category3);
 
         // Xử lý nút "Back"
         Button button = findViewById(R.id.btnback);
@@ -46,10 +46,10 @@ public class Category1Activity extends AppCompatActivity {
     }
 
     private void LoadData() {
-        lstProduct.add(new Product("1", "Choco", "Bánh Choco thường là bánh ngọt có hương vị chocolate đậm đà, kết hợp với các nguyên liệu như hạnh nhân, dừa, hoặc caramel.", "choco.jpg", 5.99, R.drawable.choco));
-        lstProduct.add(new Product("2", "Tiramisu", "Tiramisu là món tráng miệng Ý gồm lớp bánh ladyfinger thấm cà phê, xen kẽ kem mascarpone béo mịn, phủ cacao đắng nhẹ, tạo hương vị thơm ngon, tinh tế. ", "tiraminsu.jpg", 3.49, R.drawable.tiraminsu));
-        lstProduct.add(new Product("3", "Rocher", "Phủ lớp kem hoặc ganache, có hương vị liên quan đến chocolate và hạt phỉ, lấy cảm hứng từ Ferrero Rocher.", "rocher.jpg", 6.99, R.drawable.rocher));
-        lstProduct.add(new Product("4", "Flan", "Bánh flan là món tráng miệng mềm mịn, làm từ trứng, sữa và caramel, có vị béo ngậy, ngọt dịu, thường ăn kèm với cà phê hoặc đá lạnh. ", "flan.jpg", 5.99, R.drawable.flan));
+        lstProduct.add(new Product("1", "Bánh kem trà xanh", "Bánh kem trà xanh là bánh được làm từ bột trà xanh Nhật Bản (matcha), mang hương vị thanh nhẹ, hơi đắng nhưng hài hòa với vị ngọt.", "matcha.jpg", 5.99, R.drawable.matcha));
+        lstProduct.add(new Product("2", "Bánh kem xoài phủ lớp kem cheese", "Bánh kem xoài phủ lớp kem cheese là bánh kem xoài mềm mịn, thường có lớp bánh bông lan xốp nhẹ, xen kẽ với kem tươi béo ngậy và xoài tươi ngọt thanh.", "mango.jpg", 3.49, R.drawable.mango));
+        lstProduct.add(new Product("3", "Bánh kem trái cây", "Bánh kem trái cây là loại bánh bông lan mềm mịn, phủ lớp kem tươi béo ngậy và trang trí với các loại trái cây tươi như dâu, kiwi, xoài, việt quất,… tạo hương vị thanh mát, ngọt dịu.", "traicay.jpg", 6.99, R.drawable.traicay));
+        lstProduct.add(new Product("4", "Bánh kem chanh tươi ", "Bánh kem chanh tươi có lớp bánh mềm mịn, vị chua thanh mát, kết hợp kem béo ngậy và sốt chanh thơm dịu. ", "lemoncake.jpg", 5.99, R.drawable.lemoncake));
 
     }
 }

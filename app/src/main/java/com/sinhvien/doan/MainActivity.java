@@ -27,6 +27,20 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Category1Activity.class);
         button.setOnClickListener(v -> v.getContext().startActivity(intent));
 
+        // Xử lý sự kiện nhấn nút "Breakfast"
+        Button btnBreakfast = findViewById(R.id.btnbreakfast);
+        btnBreakfast.setOnClickListener(v -> {
+            Intent intent2 = new Intent(MainActivity.this, Category2Activity.class);
+            startActivity(intent2);
+        });
+
+        // Xử lý sự kiện nhấn nút "Birthday Cake"
+        Button btnbirthdaycake = findViewById(R.id.btnbirthdaycake);
+        btnbirthdaycake.setOnClickListener(v -> {
+            Intent intent3 = new Intent(MainActivity.this, Category3Activity.class);
+            startActivity(intent3);
+        });
+
         // Xử lý sự kiện BottomNavigationView
         BottomNavigationView bottomNavigationView = findViewById(R.id.navMenu);
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {

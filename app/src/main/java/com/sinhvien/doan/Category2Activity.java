@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-public class Category1Activity extends AppCompatActivity {
+public class Category2Activity extends AppCompatActivity {
     private RecyclerView rvListC;
     private ProductAdapter productAdapter;
     private ArrayList<Product> lstProduct;
@@ -19,7 +19,7 @@ public class Category1Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_category1);
+        setContentView(R.layout.activity_category2);
 
         // Xử lý nút "Back"
         Button button = findViewById(R.id.btnback);
@@ -46,10 +46,10 @@ public class Category1Activity extends AppCompatActivity {
     }
 
     private void LoadData() {
-        lstProduct.add(new Product("1", "Choco", "Bánh Choco thường là bánh ngọt có hương vị chocolate đậm đà, kết hợp với các nguyên liệu như hạnh nhân, dừa, hoặc caramel.", "choco.jpg", 5.99, R.drawable.choco));
-        lstProduct.add(new Product("2", "Tiramisu", "Tiramisu là món tráng miệng Ý gồm lớp bánh ladyfinger thấm cà phê, xen kẽ kem mascarpone béo mịn, phủ cacao đắng nhẹ, tạo hương vị thơm ngon, tinh tế. ", "tiraminsu.jpg", 3.49, R.drawable.tiraminsu));
-        lstProduct.add(new Product("3", "Rocher", "Phủ lớp kem hoặc ganache, có hương vị liên quan đến chocolate và hạt phỉ, lấy cảm hứng từ Ferrero Rocher.", "rocher.jpg", 6.99, R.drawable.rocher));
-        lstProduct.add(new Product("4", "Flan", "Bánh flan là món tráng miệng mềm mịn, làm từ trứng, sữa và caramel, có vị béo ngậy, ngọt dịu, thường ăn kèm với cà phê hoặc đá lạnh. ", "flan.jpg", 5.99, R.drawable.flan));
+        lstProduct.add(new Product("1", "Bánh mì nướng phủ bơ nghiền và trứng", "Bánh mì nướng phủ bơ nghiền, trứng luộc lòng đào thái lát, rắc tiêu đen và ớt bột, tạo hương vị béo ngậy, thơm ngon. ", "trungbo.jpg", 5.99, R.drawable.trungbo));
+        lstProduct.add(new Product("2", "Bánh mì cá hồi", "Bánh bagel hạt giòn thơm, kẹp kem phô mai, bơ lát và cá hồi xông khói, tạo hương vị béo ngậy, mặn mà. ", "bothit.jpg", 3.49, R.drawable.bothit));
+        lstProduct.add(new Product("3", "bánh mì xông khói", "Bagel hạt giòn, kẹp kem phô mai, cá hồi xông khói, hành tím và nụ bạch hoa, tạo hương vị béo, mặn và thanh nhẹ", "xongkhoi.jpg", 6.99, R.drawable.xongkhoi));
+        lstProduct.add(new Product("4", "bánh mì tôm hùm", "Bánh mì nướng giòn phủ sốt đỏ đậm đà, tôm hùm tươi ngọt, thịt cua thơm béo và rau xanh tươi mát, tạo hương vị hài hòa và hấp dẫn", "tom.jpg", 6.99, R.drawable.tom));
 
     }
 }

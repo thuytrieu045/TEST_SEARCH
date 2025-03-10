@@ -24,6 +24,6 @@
     android:id="@+id/btnback"
     android:layout_gravity="center"
     android:backgroundTint="#914F3B"
-    android:text="Back"/>
+    android:text="Quay lại"/>
 
 </LinearLayout>
