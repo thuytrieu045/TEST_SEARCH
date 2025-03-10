@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#f7e6c3"
+        android:padding="16dp">
+
+        <!-- Hình ảnh -->
+        <ImageView
+            android:id="@+id/imageViewCheesecake"
+            android:layout_width="match_parent"
+            android:layout_height="218dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/cheesecake" />
+
+        <!-- Tiêu đề "Chuẩn bị" -->
+        <TextView
+            android:id="@+id/txtChuanBiCheesecake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d58d57"
+            android:padding="8dp"
+            android:text="Chuẩn bị:"
+            android:textSize="20sp" />
+
+        <!-- Danh sách nguyên liệu -->
+        <TextView
+            android:id="@+id/txtDoKhoCheesecake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d6a481"
+            android:padding="8dp"
+            android:text="Độ khó: Trung bình   Thời gian: 90p"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtNguyenLieuCheesecake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Bánh quy 200 gr\n2. Bơ tan chảy 100 gr\n3. Kem phô mai 250 gr\n4. Đường 100 gr\n5. Trứng gà 2 quả\n6. Vani 1 muỗng cà phê\n7. Kem tươi 200 ml\n8. Mứt dâu (hoặc trái cây tùy chọn)"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/txtBuocCheesecake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d58d57"
+            android:padding="8dp"
+            android:text="Bước làm: "
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtB1Cheesecake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#914F3B"
+            android:padding="8dp"
+            android:text="Bước 1: Làm đế bánh"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txtNDB1Cheesecake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d6b7a1"
+            android:padding="8dp"
+            android:text="Nghiền bánh quy thành vụn nhỏ, sau đó trộn với bơ tan chảy. Ép hỗn hợp vào đáy khuôn và làm lạnh 15 phút." />
+
+        <TextView
+            android:id="@+id/txtB2Cheesecake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#914F3B"
+            android:padding="8dp"
+            android:text="Bước 2: Làm nhân bánh"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txtNDB2Cheesecake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d6b7a1"
+            android:padding="8dp"
+            android:text="Đánh kem phô mai với đường cho đến khi mịn. Thêm trứng, vani, kem tươi rồi trộn đều." />
+
+        <TextView
+            android:id="@+id/txtB3Cheesecake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#914F3B"
+            android:padding="8dp"
+            android:text="Bước 3: Nướng bánh"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txtNDB3Cheesecake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d6b7a1"
+            android:padding="8dp"
+            android:text="Đổ hỗn hợp lên đế bánh, nướng ở 160°C trong 50-60 phút. Để nguội hoàn toàn trước khi làm lạnh." />
+
+        <TextView
+            android:id="@+id/txtB4Cheesecake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#914F3B"
+            android:padding="8dp"
+            android:text="Bước 4: Trang trí và hoàn thành"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txtNDB4Cheesecake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d6b7a1"
+            android:padding="8dp"
+            android:text="Phủ mứt dâu lên mặt bánh hoặc trang trí với trái cây tươi theo ý thích." />
+
+        <Button
+            android:id="@+id/btnSaveCheesecake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d58d57"
+            android:text="Lưu"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/btnBackCheesecake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#914F3B"
+            android:text="Quay lại"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#f7e6c3"
+        android:padding="16dp">
+
+        <!-- Hình ảnh -->
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="match_parent"
+            android:layout_height="218dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/banhchoco" />
+
+        <!-- Tiêu đề "Chuẩn bị" -->
+        <TextView
+            android:id="@+id/txtChuanBiChoCo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d58d57"
+            android:padding="8dp"
+            android:text="Chuẩn bị:"
+            android:textSize="20sp" />
+
+        <!-- Danh sách nguyên liệu -->
+        <TextView
+            android:id="@+id/txtDoKhoChoCo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d6a481"
+            android:padding="8dp"
+            android:text="Độ khó: Trung Bình   Thời gian: 40p"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtSocolaDen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Socola đen 250 gr"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/txtBotMi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Bột mì đa dụng 150 gr"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/txtBoLac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. Bơ lạt 250 gr"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/txtTrungGa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4. Trứng gà 6 quả"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/txtDuongTrang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5. Đường trắng 200 gr"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/txtMuoi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6. Muối 5 gr"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+
+        <TextView
+            android:id="@+id/txtBuocChoCo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d58d57"
+            android:padding="8dp"
+            android:text="Bước làm: "
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtB1ChoCo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#914F3B"
+            android:padding="8dp"
+            android:text="Bước 1: Nấu chảy socola"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txtNDB1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d6b7a1"
+            android:padding="8dp"
+            android:text="Cắt nhỏ bơ lạt và sô cô la. Bắc một nồi nước trên bếp và nấu cho đến khi nước sôi. Đặt một tô thủy tinh lớn lên nồi chú ý không cho đáy tô chạm nước rồi cho bơ và sô cô la vào, nấu chảy bằng hơi nước cho đến khi bơ và sô cô la hòa quyện lại với nhau." />
+
+        <TextView
+            android:id="@+id/txtB2Choco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#914F3B"
+            android:padding="8dp"
+            android:text="Bước 2: Trộn bột"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txtNDB2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d6b7a1"
+            android:padding="8dp"
+            android:text="Dùng máy đánh trứng đánh 6 quả trứng và 200 gram đường với tốc độ vừa cho đến khi hỗn hợp hòa trộn lại với nhau. Giảm tốc độ và cho phần sô cô la được nấu sẵn vào và tiếp tục đánh cho hỗn hợp hoà quyện. Rây 150 gram bột mì đa dụng vào hỗn hợp và thêm một chút muối. Trộn đều cho đến khi hỗn hợp mềm mịn." />
+        <TextView
+            android:id="@+id/txtB3Choco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#914F3B"
+            android:padding="8dp"
+            android:text="Bước 3: Nướng bánh"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+        <TextView
+            android:id="@+id/txtNDB3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d6b7a1"
+            android:padding="8dp"
+            android:text="Cho bánh vào khuôn đã có lót một lớp giấy nến. Dàn đều bột và cho vào lò nướng chỉnh nhiệt độ 180 độ C nướng trong khoảng từ 20 - 25 phút.
+
+Dùng một que tăm chọt vào giữa bánh rồi rút ra nếu que tăm khô ráo thì bánh đã chín.
+
+Sau khi bánh chín lấy bánh ra khỏi khuôn để cho nguội bớt rồi dùng dao cắt thành các miếng nhỏ vừa ăn." />
+        <TextView
+            android:id="@+id/txtB4Choco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#914F3B"
+            android:padding="8dp"
+            android:text="Bước 4: Thành phẩm"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+        <TextView
+            android:id="@+id/txtNDB4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d6b7a1"
+            android:padding="8dp"
+            android:text="Bánh Brownie đạt được kết cấu ẩm đặc mang vị đắng đậm của sô cô la cùng kết hợp với vị béo từ các nguyên liệu khác. Cắn vào một miếng mùi sô cô la đậm đặc tỏa ra khiến các tín đồ của loại nguyên liệu này không thể chối từ." />
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d58d57"
+            android:text="Lưu"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#914F3B"
+            android:text="Quay lại"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+
+
+</ScrollView>

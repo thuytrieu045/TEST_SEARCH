@@ -17,9 +17,6 @@
         <activity android:name=".Category2Activity" android:exported="false" />
         <activity android:name=".Category3Activity" android:exported="false" />
 
-        <!-- Thêm CartActivity vào đây -->
-        <activity android:name=".CartActivity" android:exported="true"/>
-
         <activity
             android:name=".MainActivity"
             android:exported="true">

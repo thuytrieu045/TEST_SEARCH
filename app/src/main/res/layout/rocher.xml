@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#f7e6c3"
+    android:padding="16dp">
+
+    <!-- Hình ảnh -->
+    <ImageView
+        android:id="@+id/imageViewRocher"
+        android:layout_width="match_parent"
+        android:layout_height="218dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/rocher" />
+
+    <!-- Tiêu đề "Chuẩn bị" -->
+    <TextView
+        android:id="@+id/txtChuanBiRocher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#d58d57"
+        android:padding="8dp"
+        android:text="Chuẩn bị:"
+        android:textSize="20sp" />
+
+    <!-- Danh sách nguyên liệu -->
+    <TextView
+        android:id="@+id/txtDoKhoRocher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#d6a481"
+        android:padding="8dp"
+        android:text="Độ khó: Dễ   Thời gian: 30p"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txtNguyenLieuRocher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1. Socola sữa 200 gr\n2. Hạt phỉ 100 gr\n3. Bột cacao 50 gr\n4. Bánh quế 100 gr\n5. Đường 100 gr\n6. Sữa đặc 50 ml"
+        android:textSize="16sp"
+        android:padding="4dp" />
+
+    <TextView
+        android:id="@+id/txtBuocRocher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#d58d57"
+        android:padding="8dp"
+        android:text="Bước làm: "
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txtB1Rocher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#914F3B"
+        android:padding="8dp"
+        android:text="Bước 1: Chuẩn bị nguyên liệu"
+        android:textSize="15sp"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/txtNDB1Rocher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#d6b7a1"
+        android:padding="8dp"
+        android:text="Nghiền nhỏ bánh quế và hạt phỉ, sau đó trộn đều với bột cacao và sữa đặc." />
+
+    <TextView
+        android:id="@+id/txtB2Rocher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#914F3B"
+        android:padding="8dp"
+        android:text="Bước 2: Tạo viên bánh"
+        android:textSize="15sp"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/txtNDB2Rocher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#d6b7a1"
+        android:padding="8dp"
+        android:text="Viên hỗn hợp thành từng viên nhỏ, sau đó đặt vào ngăn mát tủ lạnh khoảng 15 phút để định hình." />
+
+    <TextView
+        android:id="@+id/txtB3Rocher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#914F3B"
+        android:padding="8dp"
+        android:text="Bước 3: Nhúng socola"
+        android:textSize="15sp"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/txtNDB3Rocher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#d6b7a1"
+        android:padding="8dp"
+        android:text="Làm chảy socola sữa, sau đó nhúng từng viên bánh vào lớp socola và để khô tự nhiên." />
+
+    <TextView
+        android:id="@+id/txtB4Rocher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#914F3B"
+        android:padding="8dp"
+        android:text="Bước 4: Thành phẩm"
+        android:textSize="15sp"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/txtNDB4Rocher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#d6b7a1"
+        android:padding="8dp"
+        android:text="Bánh Rocher giòn rụm, béo ngậy với lớp socola sữa thơm ngon, là món quà ngọt ngào hoàn hảo." />
+
+    <Button
+        android:id="@+id/btnSaveRocher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#d58d57"
+        android:text="Lưu"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:padding="8dp"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btnBackRocher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#914F3B"
+        android:text="Quay lại"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:padding="8dp"
+        android:layout_marginTop="8dp"/>
+</LinearLayout>
+</ScrollView>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#f7e6c3"
+        android:padding="16dp">
+
+        <!-- Hình ảnh -->
+        <ImageView
+            android:id="@+id/imageViewBanhMi"
+            android:layout_width="match_parent"
+            android:layout_height="218dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/banhmi" />
+
+        <!-- Tiêu đề "Chuẩn bị" -->
+        <TextView
+            android:id="@+id/txtChuanBiBanhMi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d58d57"
+            android:padding="8dp"
+            android:text="Chuẩn bị:"
+            android:textSize="20sp" />
+
+        <!-- Thông tin thời gian và độ khó -->
+        <TextView
+            android:id="@+id/txtDoKhoBanhMi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d6a481"
+            android:padding="8dp"
+            android:text="Độ khó: Dễ   Thời gian: 2 tiếng"
+            android:textSize="20sp" />
+
+        <!-- Danh sách nguyên liệu -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Bột mì đa dụng 500 gr"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Men nở 10 gr"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. Đường 10 gr"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4. Muối 7 gr"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5. Nước ấm 300 ml"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6. Bơ lạt 30 gr"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+        <!-- Bước làm -->
+        <TextView
+            android:id="@+id/txtBuocBanhMi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d58d57"
+            android:padding="8dp"
+            android:text="Bước làm:"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#914F3B"
+            android:padding="8dp"
+            android:text="Bước 1: Kích hoạt men"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d6b7a1"
+            android:padding="8dp"
+            android:text="Hòa men với nước ấm và đường, để yên 5-10 phút cho men nổi bọt." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#914F3B"
+            android:padding="8dp"
+            android:text="Bước 2: Trộn bột và nhồi bột"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d6b7a1"
+            android:padding="8dp"
+            android:text="Cho bột mì, muối vào tô, thêm men đã kích hoạt và nhào đến khi bột mịn. Nhồi bột khoảng 10-15 phút." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#914F3B"
+            android:padding="8dp"
+            android:text="Bước 3: Ủ bột"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d6b7a1"
+            android:padding="8dp"
+            android:text="Ủ bột 1-2 tiếng đến khi nở gấp đôi." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#914F3B"
+            android:padding="8dp"
+            android:text="Bước 4: Tạo hình và ủ lần 2"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d6b7a1"
+            android:padding="8dp"
+            android:text="Nhào sơ lại, tạo hình bánh mì lát, ủ thêm 30-45 phút." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#914F3B"
+            android:padding="8dp"
+            android:text="Bước 5: Nướng bánh"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d6b7a1"
+            android:padding="8dp"
+            android:text="Nướng ở 180°C trong 25-30 phút đến khi vỏ bánh vàng đều." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#914F3B"
+            android:padding="8dp"
+            android:text="Bước 6: Thành phẩm"
+            android:textSize="15sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d6b7a1"
+            android:padding="8dp"
+            android:text="Bánh mì lát thơm mềm, vỏ ngoài giòn nhẹ, có thể ăn kèm bơ hoặc mứt." />
+
+        <!-- Nút chức năng -->
+        <Button
+            android:id="@+id/btnSaveBanhMi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d58d57"
+            android:text="Lưu"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/btnBackBanhMi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#914F3B"
+            android:text="Quay lại"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+</ScrollView>

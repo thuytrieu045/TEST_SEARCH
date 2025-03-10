@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -53,9 +55,6 @@ public class MainActivity extends AppCompatActivity {
                 } else if (itemId == R.id.mnSearch) {
                     startActivity(new Intent(MainActivity.this, SearchActivity.class)); // Chuyển đến SearchActivity
                     return true;
-                } else if (itemId == R.id.mnShoppingCart) {
-                    startActivity(new Intent(MainActivity.this, CartActivity.class));
-                    return true;
                 } else if (itemId == R.id.mnAccount) {
                     startActivity(new Intent(MainActivity.this, AccountActivity.class));
                     return true;
@@ -63,8 +62,14 @@ public class MainActivity extends AppCompatActivity {
 
                 return false;
             }
-        });
 
+        });
+        // Load DangKyFragment vào FragmentContainerView
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, new dangky());
+        fragmentTransaction.replace(R.id.fragment_container, new dangnhap());
+        fragmentTransaction.commit();
         // Xử lý tự động căn lề phù hợp với hệ thống
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
