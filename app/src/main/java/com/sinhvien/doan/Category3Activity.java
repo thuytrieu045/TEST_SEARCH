@@ -33,7 +33,7 @@ public class Category3Activity extends AppCompatActivity {
         LoadData();
 
         // Thiết lập Adapter và LayoutManager cho RecyclerView
-        productAdapter = new ProductAdapter(lstProduct);
+        productAdapter = new ProductAdapter(this,lstProduct);
         rvListC.setAdapter(productAdapter);
         rvListC.setLayoutManager(new LinearLayoutManager(this));
 

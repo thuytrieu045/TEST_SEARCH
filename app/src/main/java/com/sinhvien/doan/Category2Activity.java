@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
+
 public class Category2Activity extends AppCompatActivity {
     private RecyclerView rvListC;
     private ProductAdapter productAdapter;
@@ -33,7 +34,7 @@ public class Category2Activity extends AppCompatActivity {
         LoadData();
 
         // Thiết lập Adapter và LayoutManager cho RecyclerView
-        productAdapter = new ProductAdapter(lstProduct);
+        productAdapter = new ProductAdapter(this,lstProduct);
         rvListC.setAdapter(productAdapter);
         rvListC.setLayoutManager(new LinearLayoutManager(this));
 

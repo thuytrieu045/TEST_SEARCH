@@ -1,25 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".SearchActivity">
 
-    <!-- Thanh tìm kiếm -->
-    <EditText
-        android:id="@+id/search_bar"
+    <!-- Layout chứa thanh tìm kiếm và nút quay lại -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nhập tên bánh cần tìm..."
-        android:padding="10dp"
-        android:background="@android:drawable/editbox_background"
-        android:drawableLeft="@android:drawable/ic_search_category_default"/>
+        android:orientation="horizontal">
+
+        <!-- Thanh tìm kiếm -->
+        <EditText
+            android:id="@+id/search_bar"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="Nhập tên bánh cần tìm..."
+            android:padding="10dp"
+            android:background="@android:drawable/editbox_background"
+            android:drawableLeft="@android:drawable/ic_search_category_default"/>
+
+        <!-- Nút Quay lại -->
+        <Button
+            android:id="@+id/btnBackToHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quay lại"
+            android:padding="10dp"
+            android:backgroundTint="#D58D57"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="8dp"/>
+    </LinearLayout>
 
     <!-- Danh sách kết quả tìm kiếm -->
-    <ListView
-        android:id="@+id/list_view"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="@android:color/darker_gray"
         android:dividerHeight="1dp"/>
+
 </LinearLayout>

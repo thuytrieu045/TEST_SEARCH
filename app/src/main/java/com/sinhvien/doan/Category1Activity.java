@@ -1,6 +1,5 @@
 package com.sinhvien.doan;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,11 +9,12 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Category1Activity extends AppCompatActivity {
     private RecyclerView rvListC;
     private ProductAdapter productAdapter;
-    private ArrayList<Product> lstProduct;
+    private List<Product> lstProduct; // Sử dụng List thay vì ArrayList để linh hoạt hơn
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,17 +23,17 @@ public class Category1Activity extends AppCompatActivity {
 
         // Xử lý nút "Back"
         Button button = findViewById(R.id.btnback);
-        button.setOnClickListener(v -> finish()); // Trả về MainActivity
+        button.setOnClickListener(v -> finish()); // Quay lại màn hình trước đó
 
         // Ánh xạ RecyclerView
         rvListC = findViewById(R.id.rvList);
         lstProduct = new ArrayList<>();
 
-        // Load dữ liệu sản phẩm
-        LoadData();
+        // Tải dữ liệu sản phẩm
+        loadData();
 
         // Thiết lập Adapter và LayoutManager cho RecyclerView
-        productAdapter = new ProductAdapter(lstProduct);
+        productAdapter = new ProductAdapter(this, lstProduct); // Đã sửa lỗi truyền context
         rvListC.setAdapter(productAdapter);
         rvListC.setLayoutManager(new LinearLayoutManager(this));
 
@@ -45,11 +45,9 @@ public class Category1Activity extends AppCompatActivity {
         });
     }
 
-    private void LoadData() {
-        lstProduct.add(new Product("1", "Choco", "Bánh Choco thường là bánh ngọt có hương vị chocolate đậm đà, kết hợp với các nguyên liệu như hạnh nhân, dừa, hoặc caramel.", "choco.jpg", 5.99, R.drawable.choco));
-        lstProduct.add(new Product("2", "Tiramisu", "Tiramisu là món tráng miệng Ý gồm lớp bánh ladyfinger thấm cà phê, xen kẽ kem mascarpone béo mịn, phủ cacao đắng nhẹ, tạo hương vị thơm ngon, tinh tế. ", "tiraminsu.jpg", 3.49, R.drawable.tiraminsu));
-        lstProduct.add(new Product("3", "Rocher", "Phủ lớp kem hoặc ganache, có hương vị liên quan đến chocolate và hạt phỉ, lấy cảm hứng từ Ferrero Rocher.", "rocher.jpg", 6.99, R.drawable.rocher));
-        lstProduct.add(new Product("4", "Flan", "Bánh flan là món tráng miệng mềm mịn, làm từ trứng, sữa và caramel, có vị béo ngậy, ngọt dịu, thường ăn kèm với cà phê hoặc đá lạnh. ", "flan.jpg", 5.99, R.drawable.flan));
-
+    private void loadData() {
+        lstProduct.add(new Product("1", "Choco", "Chocolate Cake", "choco.jpg", 5.99, R.drawable.choco));
+        lstProduct.add(new Product("2", "Bread", "Freshly baked bread", "bread.jpg", 3.49, R.drawable.bread));
+        lstProduct.add(new Product("3", "Rocher", "Ferrero Rocher Chocolate", "rocher.jpg", 6.99, R.drawable.rocher));
     }
 }
