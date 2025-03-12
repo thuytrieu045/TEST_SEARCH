@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView
-
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,139 +12,121 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#f4e4d7"
+        android:background="#f7e6c3"
         android:padding="16dp">
 
         <!-- Hình ảnh -->
         <ImageView
-            android:id="@+id/imageViewDonut"
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="218dp"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/donut" />
+            app:srcCompat="@drawable/trungbo" />
 
         <!-- Tiêu đề "Chuẩn bị" -->
         <TextView
-            android:id="@+id/txtChuanBiDonut"
+            android:id="@+id/txtChuanBi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#a66a44"
+            android:background="#d58d57"
             android:padding="8dp"
             android:text="Chuẩn bị:"
-            android:textSize="20sp"
-            android:textColor="@android:color/white" />
+            android:textSize="20sp" />
 
         <!-- Độ khó & thời gian -->
         <TextView
-            android:id="@+id/txtDoKhoDonut"
+            android:id="@+id/txtDoKho"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#c79a78"
+            android:background="#d6a481"
             android:padding="8dp"
-            android:text="Độ khó: Trung bình   Thời gian: 2h"
+            android:text="Độ khó: Dễ   Thời gian: 15p"
             android:textSize="20sp" />
 
         <!-- Danh sách nguyên liệu -->
         <TextView
-            android:id="@+id/txtNguyenLieuDonut"
+            android:id="@+id/txtNguyenLieu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1. Bột mì 300 gr\n2. Đường 50 gr\n3. Men nở 5 gr\n4. Sữa tươi 150 ml\n5. Bơ 50 gr\n6. Trứng gà 1 quả\n7. Muối 3 gr\n8. Dầu ăn để chiên\n9. Socola hoặc đường bột để phủ"
+            android:text="1. Bánh mì sandwich 2 lát\n2. Bơ nghiền 50g\n3. Trứng luộc lòng đào 1 quả\n4. Tiêu đen, ớt bột\n5. Rau thơm tùy chọn"
             android:textSize="16sp"
             android:padding="4dp" />
 
+        <!-- Tiêu đề "Bước làm" -->
         <TextView
-            android:id="@+id/txtBuocDonut"
+            android:id="@+id/txtBuoc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#a66a44"
+            android:background="#d58d57"
             android:padding="8dp"
             android:text="Bước làm: "
-            android:textSize="20sp"
-            android:textColor="@android:color/white" />
+            android:textSize="20sp" />
 
+        <!-- Các bước làm -->
         <TextView
-            android:id="@+id/txtB1Donut"
+            android:id="@+id/txtB1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#804c29"
+            android:background="#914F3B"
             android:padding="8dp"
-            android:text="Bước 1: Nhào bột và ủ"
+            android:text="Bước 1: Chuẩn bị nguyên liệu"
             android:textSize="15sp"
             android:textColor="@android:color/white" />
 
         <TextView
-            android:id="@+id/txtNDB1Donut"
+            android:id="@+id/txtNDB1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#d9b9a3"
+            android:background="#d6b7a1"
             android:padding="8dp"
-            android:text="Trộn bột mì, đường, men nở và muối. Thêm sữa, bơ và trứng, nhào bột trong 10 phút. Ủ bột trong 1 tiếng đến khi nở gấp đôi." />
+            android:text="Nghiền nhuyễn bơ với một chút muối và tiêu. Cắt trứng luộc thành lát mỏng."/>
 
         <TextView
-            android:id="@+id/txtB2Donut"
+            android:id="@+id/txtB2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#804c29"
+            android:background="#914F3B"
             android:padding="8dp"
-            android:text="Bước 2: Cắt bột và tạo hình"
+            android:text="Bước 2: Phết bơ và xếp trứng"
             android:textSize="15sp"
             android:textColor="@android:color/white" />
 
         <TextView
-            android:id="@+id/txtNDB2Donut"
+            android:id="@+id/txtNDB2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#d9b9a3"
+            android:background="#d6b7a1"
             android:padding="8dp"
-            android:text="Cán bột dày khoảng 1 cm, dùng khuôn cắt thành hình donut. Ủ thêm 30 phút." />
+            android:text="Phết đều bơ nghiền lên từng lát bánh mì. Xếp trứng lát lên trên, rắc thêm tiêu đen và ớt bột."/>
 
         <TextView
-            android:id="@+id/txtB3Donut"
+            android:id="@+id/txtB3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#804c29"
+            android:background="#914F3B"
             android:padding="8dp"
-            android:text="Bước 3: Chiên bánh"
+            android:text="Bước 3: Hoàn thành"
             android:textSize="15sp"
             android:textColor="@android:color/white" />
 
         <TextView
-            android:id="@+id/txtNDB3Donut"
+            android:id="@+id/txtNDB3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#d9b9a3"
+            android:background="#d6b7a1"
             android:padding="8dp"
-            android:text="Chiên bánh trong dầu nóng (170°C) đến khi vàng đều, vớt ra để ráo dầu." />
+            android:text="Kẹp hai lát bánh mì lại, có thể cắt đôi để dễ ăn. Dùng ngay khi còn tươi ngon!"/>
 
-        <TextView
-            android:id="@+id/txtB4Donut"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#804c29"
-            android:padding="8dp"
-            android:text="Bước 4: Trang trí"
-            android:textSize="15sp"
-            android:textColor="@android:color/white" />
-
-        <TextView
-            android:id="@+id/txtNDB4Donut"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#d9b9a3"
-            android:padding="8dp"
-            android:text="Phủ socola đun chảy hoặc rắc đường bột lên mặt bánh để hoàn tất." />
-
+        <!-- Nút Quay lại -->
         <Button
             android:id="@+id/btnBack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#804c29"
+            android:background="#914F3B"
             android:text="Quay lại"
             android:textSize="18sp"
             android:textColor="@android:color/white"
             android:padding="8dp"
             android:layout_marginTop="8dp"/>
     </LinearLayout>
-
 </ScrollView>

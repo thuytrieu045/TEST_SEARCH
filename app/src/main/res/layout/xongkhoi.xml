@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView
-
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,132 +12,121 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#f4e4d7"
+        android:background="#f7e6c3"
         android:padding="16dp">
 
         <!-- Hình ảnh -->
         <ImageView
-            android:id="@+id/imageViewChocolateCake"
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="218dp"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/chocolate_cake" />
+            app:srcCompat="@drawable/xongkhoi" />
 
         <!-- Tiêu đề "Chuẩn bị" -->
         <TextView
-            android:id="@+id/txtChuanBiChocolateCake"
+            android:id="@+id/txtChuanBi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#a66a44"
+            android:background="#d58d57"
             android:padding="8dp"
             android:text="Chuẩn bị:"
-            android:textSize="20sp"
-            android:textColor="@android:color/white" />
+            android:textSize="20sp" />
 
         <!-- Độ khó & thời gian -->
         <TextView
-            android:id="@+id/txtDoKhoChocolateCake"
+            android:id="@+id/txtDoKho"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#c79a78"
+            android:background="#d6a481"
             android:padding="8dp"
-            android:text="Độ khó: Dễ   Thời gian: 60p"
+            android:text="Độ khó: Dễ   Thời gian: 15p"
             android:textSize="20sp" />
 
         <!-- Danh sách nguyên liệu -->
         <TextView
-            android:id="@+id/txtNguyenLieuChocolateCake"
+            android:id="@+id/txtNguyenLieu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1. Bột mì 200 gr\n2. Bột cacao 50 gr\n3. Đường 150 gr\n4. Bơ 100 gr\n5. Trứng gà 2 quả\n6. Sữa tươi 150 ml\n7. Bột nở 1 muỗng cà phê\n8. Socola đun chảy 100 gr"
+            android:text="1. Bánh mì sandwich 1 ổ\n2. Thịt xông khói 50g\n3. Sốt mayonnaise\n4. Xà lách, cà chua\n5. Tiêu, muối"
             android:textSize="16sp"
             android:padding="4dp" />
 
+        <!-- Tiêu đề "Bước làm" -->
         <TextView
-            android:id="@+id/txtBuocChocolateCake"
+            android:id="@+id/txtBuoc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#a66a44"
+            android:background="#d58d57"
             android:padding="8dp"
             android:text="Bước làm: "
-            android:textSize="20sp"
-            android:textColor="@android:color/white" />
+            android:textSize="20sp" />
 
+        <!-- Các bước làm -->
         <TextView
-            android:id="@+id/txtB1ChocolateCake"
+            android:id="@+id/txtB1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#804c29"
+            android:background="#914F3B"
             android:padding="8dp"
-            android:text="Bước 1: Trộn nguyên liệu"
+            android:text="Bước 1: Chuẩn bị nguyên liệu"
             android:textSize="15sp"
             android:textColor="@android:color/white" />
 
         <TextView
-            android:id="@+id/txtNDB1ChocolateCake"
+            android:id="@+id/txtNDB1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#d9b9a3"
+            android:background="#d6b7a1"
             android:padding="8dp"
-            android:text="Trộn đều bột mì, bột cacao và bột nở. Trong một tô khác, đánh bơ với đường cho mịn, sau đó thêm trứng, sữa và socola đun chảy." />
+            android:text="Rửa sạch rau xà lách và cà chua, cắt lát mỏng. Nướng thịt xông khói cho giòn."/>
 
         <TextView
-            android:id="@+id/txtB2ChocolateCake"
+            android:id="@+id/txtB2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#804c29"
+            android:background="#914F3B"
             android:padding="8dp"
-            android:text="Bước 2: Nướng bánh"
+            android:text="Bước 2: Làm nhân bánh"
             android:textSize="15sp"
             android:textColor="@android:color/white" />
 
         <TextView
-            android:id="@+id/txtNDB2ChocolateCake"
+            android:id="@+id/txtNDB2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#d9b9a3"
+            android:background="#d6b7a1"
             android:padding="8dp"
-            android:text="Đổ hỗn hợp vào khuôn, nướng ở 180°C trong 40 phút." />
+            android:text="Phết sốt mayonnaise lên bánh mì, sau đó xếp thịt xông khói, xà lách và cà chua lên trên."/>
 
         <TextView
-            android:id="@+id/txtB3ChocolateCake"
+            android:id="@+id/txtB3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#804c29"
+            android:background="#914F3B"
             android:padding="8dp"
-            android:text="Bước 3: Trang trí"
+            android:text="Bước 3: Hoàn thành"
             android:textSize="15sp"
             android:textColor="@android:color/white" />
 
         <TextView
-            android:id="@+id/txtNDB3ChocolateCake"
+            android:id="@+id/txtNDB3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#d9b9a3"
+            android:background="#d6b7a1"
             android:padding="8dp"
-            android:text="Phủ socola đun chảy lên bánh hoặc trang trí với kem tươi và dâu tây." />
+            android:text="Ép nhẹ bánh để các nguyên liệu hòa quyện, cắt làm đôi và thưởng thức."/>
 
+        <!-- Nút Quay lại -->
         <Button
-            android:id="@+id/btnSaveChocolateCake"
+            android:id="@+id/btnBack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#a66a44"
-            android:text="Lưu"
-            android:textSize="18sp"
-            android:textColor="@android:color/white"
-            android:padding="8dp"
-            android:layout_marginTop="16dp"/>
-
-        <Button
-            android:id="@+id/btnBackChocolateCake"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#804c29"
+            android:background="#914F3B"
             android:text="Quay lại"
             android:textSize="18sp"
             android:textColor="@android:color/white"
             android:padding="8dp"
             android:layout_marginTop="8dp"/>
     </LinearLayout>
-
 </ScrollView>

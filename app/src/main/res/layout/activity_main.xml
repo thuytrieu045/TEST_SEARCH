@@ -124,14 +124,15 @@
             android:src="@drawable/bannertoday" />
 
         <Button
+            android:id="@+id/btnViewInformation"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="view information"
+            android:text="View Information"
             android:backgroundTint="#D58D57"
             android:layout_margin="2dp"
             android:textColor="#FFFFFF"
-            android:padding="15dp"
-            />
+            android:padding="15dp"/>
+
     </LinearLayout>
 </LinearLayout>
 

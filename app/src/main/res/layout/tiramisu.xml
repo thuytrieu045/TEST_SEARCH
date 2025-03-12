@@ -119,18 +119,7 @@
             android:text="Phủ lớp kem mascarpone lên, tiếp tục xếp bánh và rắc bột cacao. Để lạnh 3 tiếng trước khi dùng." />
 
         <Button
-            android:id="@+id/btnSaveTiramisu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#a66a44"
-            android:text="Lưu"
-            android:textSize="18sp"
-            android:textColor="@android:color/white"
-            android:padding="8dp"
-            android:layout_marginTop="16dp"/>
-
-        <Button
-            android:id="@+id/btnBackTiramisu"
+            android:id="@+id/btnBack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#804c29"

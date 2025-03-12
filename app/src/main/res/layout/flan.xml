@@ -13,150 +13,167 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#f4e4d7"
+        android:background="#f7e6c3"
         android:padding="16dp">
 
         <!-- Hình ảnh -->
         <ImageView
-            android:id="@+id/imageViewCroissant"
+            android:id="@+id/imageViewFlan"
             android:layout_width="match_parent"
             android:layout_height="218dp"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/croissant" />
+            app:srcCompat="@drawable/flan" />
 
         <!-- Tiêu đề "Chuẩn bị" -->
         <TextView
-            android:id="@+id/txtChuanBiCroissant"
+            android:id="@+id/txtChuanBiFlan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#a66a44"
+            android:background="#d58d57"
             android:padding="8dp"
             android:text="Chuẩn bị:"
-            android:textSize="20sp"
-            android:textColor="@android:color/white" />
-
-        <!-- Độ khó & thời gian -->
-        <TextView
-            android:id="@+id/txtDoKhoCroissant"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#c79a78"
-            android:padding="8dp"
-            android:text="Độ khó: Khó   Thời gian: 3h"
             android:textSize="20sp" />
 
         <!-- Danh sách nguyên liệu -->
         <TextView
-            android:id="@+id/txtNguyenLieuCroissant"
+            android:id="@+id/txtDoKhoFlan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d6a481"
+            android:padding="8dp"
+            android:text="Độ khó: Dễ   Thời gian: 60p"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtTrungGaFlan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1. Bột mì 500 gr\n2. Đường 50 gr\n3. Men nở 10 gr\n4. Sữa tươi 250 ml\n5. Bơ 300 gr\n6. Trứng gà 1 quả\n7. Muối 5 gr"
+            android:text="1. Trứng gà 4 quả"
             android:textSize="16sp"
             android:padding="4dp" />
 
         <TextView
-            android:id="@+id/txtBuocCroissant"
+            android:id="@+id/txtSuaDacFlan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Sữa đặc 1 hộp"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/txtSuaTuoiFlan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. Sữa tươi 250 ml"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/txtDuongFlan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4. Đường trắng 100 gr"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/txtVanillaFlan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5. Vani 1 muỗng cà phê"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/txtBuocFlan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#a66a44"
+            android:background="#d58d57"
             android:padding="8dp"
             android:text="Bước làm: "
-            android:textSize="20sp"
-            android:textColor="@android:color/white" />
+            android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/txtB1Croissant"
+            android:id="@+id/txtB1Flan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#804c29"
+            android:background="#914F3B"
             android:padding="8dp"
-            android:text="Bước 1: Nhào bột"
+            android:text="Bước 1: Làm caramel"
             android:textSize="15sp"
             android:textColor="@android:color/white" />
 
         <TextView
-            android:id="@+id/txtNDB1Croissant"
+            android:id="@+id/txtNDB1Flan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#d9b9a3"
+            android:background="#d6b7a1"
             android:padding="8dp"
-            android:text="Trộn bột mì, đường, men nở và muối. Thêm sữa từ từ, nhào bột trong 10 phút rồi ủ 2 tiếng." />
+            android:text="Nấu 100 gr đường với ít nước trên lửa nhỏ đến khi chuyển màu cánh gián, sau đó đổ vào khuôn bánh." />
 
         <TextView
-            android:id="@+id/txtB2Croissant"
+            android:id="@+id/txtB2Flan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#804c29"
+            android:background="#914F3B"
             android:padding="8dp"
-            android:text="Bước 2: Cán bột và gấp lớp"
+            android:text="Bước 2: Pha hỗn hợp flan"
             android:textSize="15sp"
             android:textColor="@android:color/white" />
 
         <TextView
-            android:id="@+id/txtNDB2Croissant"
+            android:id="@+id/txtNDB2Flan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#d9b9a3"
+            android:background="#d6b7a1"
             android:padding="8dp"
-            android:text="Cán bột thành hình chữ nhật, đặt bơ vào giữa rồi gấp bột lại. Lặp lại quá trình cán và gấp 3 lần, sau đó ủ bột trong 1 tiếng." />
+            android:text="Đánh tan trứng gà, thêm sữa đặc, sữa tươi và vani. Lọc qua rây cho mịn rồi đổ vào khuôn caramel." />
 
         <TextView
-            android:id="@+id/txtB3Croissant"
+            android:id="@+id/txtB3Flan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#804c29"
+            android:background="#914F3B"
             android:padding="8dp"
-            android:text="Bước 3: Cắt bột và tạo hình"
+            android:text="Bước 3: Hấp bánh"
             android:textSize="15sp"
             android:textColor="@android:color/white" />
 
         <TextView
-            android:id="@+id/txtNDB3Croissant"
+            android:id="@+id/txtNDB3Flan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#d9b9a3"
+            android:background="#d6b7a1"
             android:padding="8dp"
-            android:text="Cắt bột thành các tam giác nhỏ, cuộn lại thành hình croissant, sau đó ủ thêm 30 phút." />
+            android:text="Đậy kín khuôn bằng giấy bạc, hấp cách thủy 30 phút. Kiểm tra bằng tăm, nếu sạch là bánh đã chín." />
 
         <TextView
-            android:id="@+id/txtB4Croissant"
+            android:id="@+id/txtB4Flan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#804c29"
+            android:background="#914F3B"
             android:padding="8dp"
-            android:text="Bước 4: Nướng bánh"
+            android:text="Bước 4: Thành phẩm"
             android:textSize="15sp"
             android:textColor="@android:color/white" />
 
         <TextView
-            android:id="@+id/txtNDB4Croissant"
+            android:id="@+id/txtNDB4Flan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#d9b9a3"
+            android:background="#d6b7a1"
             android:padding="8dp"
-            android:text="Quét một lớp trứng lên bánh, nướng ở 200°C trong 20 phút cho đến khi vàng giòn." />
+            android:text="Bánh flan mềm mịn, thơm mùi trứng và sữa, kết hợp với lớp caramel ngọt thanh, ngon hơn khi dùng lạnh." />
 
         <Button
-            android:id="@+id/btnSaveCroissant"
+            android:id="@+id/btnBack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#a66a44"
-            android:text="Lưu"
-            android:textSize="18sp"
-            android:textColor="@android:color/white"
-            android:padding="8dp"
-            android:layout_marginTop="16dp"/>
-
-        <Button
-            android:id="@+id/btnBackCroissant"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#804c29"
+            android:background="#914F3B"
             android:text="Quay lại"
             android:textSize="18sp"
             android:textColor="@android:color/white"
             android:padding="8dp"
             android:layout_marginTop="8dp"/>
     </LinearLayout>
-
 </ScrollView>

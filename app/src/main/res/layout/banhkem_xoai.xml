@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView
-
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,132 +12,121 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#f4e4d7"
+        android:background="#f7e6c3"
         android:padding="16dp">
 
         <!-- Hình ảnh -->
         <ImageView
-            android:id="@+id/imageViewBirthdayCake"
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="218dp"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/birthdaycake" />
+            app:srcCompat="@drawable/mango" />
 
         <!-- Tiêu đề "Chuẩn bị" -->
         <TextView
-            android:id="@+id/txtChuanBiBirthdayCake"
+            android:id="@+id/txtChuanBi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#a66a44"
+            android:background="#d58d57"
             android:padding="8dp"
             android:text="Chuẩn bị:"
-            android:textSize="20sp"
-            android:textColor="@android:color/white" />
+            android:textSize="20sp" />
 
         <!-- Độ khó & thời gian -->
         <TextView
-            android:id="@+id/txtDoKhoBirthdayCake"
+            android:id="@+id/txtDoKho"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#c79a78"
+            android:background="#d6a481"
             android:padding="8dp"
-            android:text="Độ khó: Trung bình   Thời gian: 90p"
+            android:text="Độ khó: Trung bình   Thời gian: 60p"
             android:textSize="20sp" />
 
         <!-- Danh sách nguyên liệu -->
         <TextView
-            android:id="@+id/txtNguyenLieuBirthdayCake"
+            android:id="@+id/txtNguyenLieu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1. Bột mì 250 gr\n2. Đường 200 gr\n3. Trứng gà 3 quả\n4. Sữa tươi 150 ml\n5. Bơ 120 gr\n6. Bột nở 1 muỗng cà phê\n7. Vani 1 muỗng cà phê\n8. Kem tươi và trái cây trang trí"
+            android:text="1. Bột mì 220g\n2. Trứng gà 4 quả\n3. Đường 120g\n4. Sữa tươi 120ml\n5. Kem tươi 250ml\n6. Xoài chín 200g\n7. Bột nở 5g\n8. Vani 1 muỗng cà phê"
             android:textSize="16sp"
             android:padding="4dp" />
 
+        <!-- Tiêu đề "Bước làm" -->
         <TextView
-            android:id="@+id/txtBuocBirthdayCake"
+            android:id="@+id/txtBuoc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#a66a44"
+            android:background="#d58d57"
             android:padding="8dp"
             android:text="Bước làm: "
-            android:textSize="20sp"
-            android:textColor="@android:color/white" />
+            android:textSize="20sp" />
 
+        <!-- Các bước làm -->
         <TextView
-            android:id="@+id/txtB1BirthdayCake"
+            android:id="@+id/txtB1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#804c29"
+            android:background="#914F3B"
             android:padding="8dp"
             android:text="Bước 1: Trộn bột"
             android:textSize="15sp"
             android:textColor="@android:color/white" />
 
         <TextView
-            android:id="@+id/txtNDB1BirthdayCake"
+            android:id="@+id/txtNDB1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#d9b9a3"
+            android:background="#d6b7a1"
             android:padding="8dp"
-            android:text="Đánh trứng với đường cho đến khi bông mịn, sau đó thêm bơ, sữa, bột mì, bột nở và vani, trộn đều." />
+            android:text="Trộn bột mì, bột nở và đường trong một tô lớn. Đánh tan trứng gà với vani và sữa tươi, sau đó trộn đều với hỗn hợp bột. Xay nhuyễn xoài chín và thêm vào hỗn hợp."/>
 
         <TextView
-            android:id="@+id/txtB2BirthdayCake"
+            android:id="@+id/txtB2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#804c29"
+            android:background="#914F3B"
             android:padding="8dp"
             android:text="Bước 2: Nướng bánh"
             android:textSize="15sp"
             android:textColor="@android:color/white" />
 
         <TextView
-            android:id="@+id/txtNDB2BirthdayCake"
+            android:id="@+id/txtNDB2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#d9b9a3"
+            android:background="#d6b7a1"
             android:padding="8dp"
-            android:text="Đổ hỗn hợp vào khuôn, nướng ở 180°C trong 50 phút. Kiểm tra bằng tăm, nếu rút ra sạch là bánh đã chín." />
+            android:text="Đổ hỗn hợp vào khuôn nướng, đặt vào lò ở 170°C và nướng trong 35 phút đến khi bánh chín vàng."/>
 
         <TextView
-            android:id="@+id/txtB3BirthdayCake"
+            android:id="@+id/txtB3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#804c29"
+            android:background="#914F3B"
             android:padding="8dp"
-            android:text="Bước 3: Trang trí"
+            android:text="Bước 3: Trang trí bánh"
             android:textSize="15sp"
             android:textColor="@android:color/white" />
 
         <TextView
-            android:id="@+id/txtNDB3BirthdayCake"
+            android:id="@+id/txtNDB3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#d9b9a3"
+            android:background="#d6b7a1"
             android:padding="8dp"
-            android:text="Phết kem tươi lên bánh, trang trí với trái cây và nến sinh nhật." />
+            android:text="Phết kem tươi lên bánh đã nguội, trang trí với lát xoài tươi và lá bạc hà để tạo điểm nhấn."/>
 
+        <!-- Nút Quay lại -->
         <Button
-            android:id="@+id/btnSaveBirthdayCake"
+            android:id="@+id/btnBack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#a66a44"
-            android:text="Lưu"
-            android:textSize="18sp"
-            android:textColor="@android:color/white"
-            android:padding="8dp"
-            android:layout_marginTop="16dp"/>
-
-        <Button
-            android:id="@+id/btnBackBirthdayCake"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#804c29"
+            android:background="#914F3B"
             android:text="Quay lại"
             android:textSize="18sp"
             android:textColor="@android:color/white"
             android:padding="8dp"
             android:layout_marginTop="8dp"/>
     </LinearLayout>
-
 </ScrollView>

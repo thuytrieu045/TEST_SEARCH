@@ -16,10 +16,12 @@ public class Category1Activity extends AppCompatActivity {
     private ProductAdapter productAdapter;
     private List<Product> lstProduct; // Sử dụng List thay vì ArrayList để linh hoạt hơn
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category1);
+
 
         // Xử lý nút "Back"
         Button button = findViewById(R.id.btnback);
@@ -43,6 +45,7 @@ public class Category1Activity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
     }
 
     private void loadData() {

@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:text="Đăng nhập"
         android:layout_below="@id/etPassword"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/white"
         android:textColor="@android:color/white"/>
 
 </RelativeLayout>

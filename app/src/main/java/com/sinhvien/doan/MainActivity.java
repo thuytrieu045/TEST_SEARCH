@@ -42,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
             Intent intent3 = new Intent(MainActivity.this, Category3Activity.class);
             startActivity(intent3);
         });
+        // Xử lý sự kiện nhấn nút "View Information"
+        Button btnViewInfo = findViewById(R.id.btnViewInformation);
+        btnViewInfo.setOnClickListener(v -> {
+            Intent intent4 = new Intent(MainActivity.this, SpecialCakeActivity.class);
+            startActivity(intent4);
+        });
+
 
         // Xử lý sự kiện BottomNavigationView
         BottomNavigationView bottomNavigationView = findViewById(R.id.navMenu);
