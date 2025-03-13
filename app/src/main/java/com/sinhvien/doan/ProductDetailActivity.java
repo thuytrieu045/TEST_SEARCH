@@ -16,11 +16,11 @@ public class ProductDetailActivity extends AppCompatActivity {
         if ("1".equals(productId)) {
             setContentView(R.layout.banh_choco);
         } else if ("2".equals(productId)) {
-            setContentView(R.layout.tiramisu);
+            setContentView(R.layout.flan);
         } else if ("3".equals(productId)) {
             setContentView(R.layout.rocher);
         } else if ("4".equals(productId)) {
-            setContentView(R.layout.flan);
+            setContentView(R.layout.tiramisu);
         } else if ("5".equals(productId)) {
             setContentView(R.layout.trungbo);
         } else if ("6".equals(productId)) {

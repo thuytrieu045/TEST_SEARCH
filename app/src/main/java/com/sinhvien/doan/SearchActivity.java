@@ -65,14 +65,14 @@ public class SearchActivity extends AppCompatActivity {
                 {"2", "Flan", "Bánh caramel mềm mịn, làm từ trứng, sữa và đường.", "flan.jpg", "5.99", String.valueOf(R.drawable.flan)},
                 {"3", "Rocher", "Ferrero Rocher Chocolate", "rocher.jpg", "5.99", String.valueOf(R.drawable.rocher)},
                 {"4", "Tiramisu", "Bánh cà phê Ý ngon tuyệt", "tiramisu.jpg", "5.99", String.valueOf(R.drawable.tiramisu)},
-                {"5", "Bánh Mì bơ nghiền và trứng", "Bánh kem mềm mịn", "mousse_cake.jpg", "5.99", String.valueOf(R.drawable.mousse_cake)},
-                {"6", "Bánh kem trà xanh", "Bánh làm từ bột trà xanh Nhật Bản.", "matcha.jpg", "5.99", String.valueOf(R.drawable.matcha)},
-                {"7", "Bánh kem xoài", "Bánh kem xoài mềm mịn, xen kẽ kem tươi và xoài.", "mango.jpg", "3.49", String.valueOf(R.drawable.mango)},
-                {"8", "Bánh kem trái cây", "Trang trí với dâu, kiwi, xoài, việt quất.", "traicay.jpg", "6.99", String.valueOf(R.drawable.traicay)},
-                {"9", "Bánh kem chanh", "Bánh có vị chua thanh mát, sốt chanh dịu nhẹ.", "lemoncake.jpg", "5.99", String.valueOf(R.drawable.lemoncake)},
-                {"10", "Bánh mì cá hồi", "Bánh bagel kẹp cá hồi xông khói, bơ lát, phô mai.", "cahoi.jpg", "6.99", String.valueOf(R.drawable.bothit)},
-                {"11", "Bánh mì xông khói", "Bánh mì kẹp kem phô mai, cá hồi xông khói, hành tím.", "xongkhoi.jpg", "6.99", String.valueOf(R.drawable.xongkhoi)},
-                {"12", "Bánh mì tôm hùm", "Bánh mì nướng phủ sốt đỏ đậm đà, tôm hùm tươi.", "tomhum.jpg", "6.99", String.valueOf(R.drawable.tom)}
+                {"5", "Bánh Mì bơ nghiền và trứng", "Bánh kem mềm mịn", "mousse_cake.jpg", "5.99", String.valueOf(R.drawable.trungbo)},
+                {"6", "Bánh mì cá hồi", "Bánh bagel kẹp cá hồi xông khói, bơ lát, phô mai.", "cahoi.jpg", "6.99", String.valueOf(R.drawable.bothit)},
+                {"7", "Bánh mì xông khói", "Bánh mì kẹp kem phô mai, cá hồi xông khói, hành tím.", "xongkhoi.jpg", "6.99", String.valueOf(R.drawable.xongkhoi)},
+                {"8", "Bánh mì tôm hùm", "Bánh mì nướng phủ sốt đỏ đậm đà, tôm hùm tươi.", "tomhum.jpg", "6.99", String.valueOf(R.drawable.tom)},
+                {"9", "Bánh kem trà xanh", "Bánh làm từ bột trà xanh Nhật Bản.", "matcha.jpg", "5.99", String.valueOf(R.drawable.matcha)},
+                {"10", "Bánh kem xoài", "Bánh kem xoài mềm mịn, xen kẽ kem tươi và xoài.", "mango.jpg", "3.49", String.valueOf(R.drawable.mango)},
+                {"11", "Bánh kem trái cây", "Trang trí với dâu, kiwi, xoài, việt quất.", "traicay.jpg", "6.99", String.valueOf(R.drawable.traicay)},
+                {"12", "Bánh kem chanh", "Bánh có vị chua thanh mát, sốt chanh dịu nhẹ.", "lemoncake.jpg", "5.99", String.valueOf(R.drawable.lemoncake)}
         };
 
         for (String[] product : products) {

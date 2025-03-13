@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="218dp"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/trungbo" />
+            app:srcCompat="@drawable/tom" />
 
         <!-- Tiêu đề "Chuẩn bị" -->
         <TextView
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:background="#d6a481"
             android:padding="8dp"
-            android:text="Độ khó: Dễ   Thời gian: 15p"
+            android:text="Độ khó: Trung bình   Thời gian: 30p"
             android:textSize="20sp" />
 
         <!-- Danh sách nguyên liệu -->
@@ -48,7 +48,7 @@
             android:id="@+id/txtNguyenLieu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1. Bánh mì sandwich 2 lát\n2. Bơ nghiền 50g\n3. Trứng luộc lòng đào 1 quả\n4. Tiêu đen, ớt bột\n5. Rau thơm tùy chọn"
+            android:text="1. Bánh mì nướng 1 ổ\n2. Thịt tôm hùm 100g\n3. Sốt bơ tỏi\n4. Rau xà lách, hành lá\n5. Tiêu, muối, ớt bột"
             android:textSize="16sp"
             android:padding="4dp" />
 
@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:background="#d6b7a1"
             android:padding="8dp"
-            android:text="Nghiền nhuyễn bơ với một chút muối và tiêu. Cắt trứng luộc thành lát mỏng."/>
+            android:text="Luộc tôm hùm, tách lấy thịt. Cắt nhỏ hành lá, rửa sạch rau xà lách."/>
 
         <TextView
             android:id="@+id/txtB2"
@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:background="#914F3B"
             android:padding="8dp"
-            android:text="Bước 2: Phết bơ và xếp trứng"
+            android:text="Bước 2: Làm sốt và nướng bánh"
             android:textSize="15sp"
             android:textColor="@android:color/white" />
 
@@ -97,7 +97,7 @@
             android:layout_height="wrap_content"
             android:background="#d6b7a1"
             android:padding="8dp"
-            android:text="Phết đều bơ nghiền lên từng lát bánh mì. Xếp trứng lát lên trên, rắc thêm tiêu đen và ớt bột."/>
+            android:text="Đun chảy bơ tỏi, trộn với thịt tôm hùm, nêm gia vị. Nướng bánh mì cho giòn."/>
 
         <TextView
             android:id="@+id/txtB3"
@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
             android:background="#d6b7a1"
             android:padding="8dp"
-            android:text="Kẹp hai lát bánh mì lại, có thể cắt đôi để dễ ăn. Dùng ngay khi còn tươi ngon!"/>
+            android:text="Cho rau xà lách vào bánh, thêm thịt tôm hùm sốt bơ tỏi. Thưởng thức ngay!"/>
 
         <!-- Nút Quay lại -->
         <Button
