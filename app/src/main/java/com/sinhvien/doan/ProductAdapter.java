@@ -1,12 +1,12 @@
 package com.sinhvien.doan;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.content.Intent;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,59 +15,61 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
-    ArrayList<Product> lstProduct;
-    Context context;
+    private List<Product> lstProduct;
+    private List<Product> lstProductFull; // Danh sách đầy đủ (không lọc)
+    private Context context;
 
-    public ProductAdapter(ArrayList<Product> lstProduct) {
-        this.lstProduct = lstProduct;
+    public ProductAdapter(Context context, List<Product> lstProduct) {
+        this.context = context;
+        this.lstProduct = new ArrayList<>(lstProduct); // Copy danh sách ban đầu
+        this.lstProductFull = new ArrayList<>(lstProduct); // Lưu danh sách đầy đủ để phục hồi khi xóa bộ lọc
     }
 
-    public ProductAdapter(SearchActivity searchActivity, List<Product> productList) {
-    }
-
-    // Gắn layout item vào Adapter
     @NonNull
     @Override
     public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-
-        // Nạp layout cho View biểu diễn phần tử product
         View productView = inflater.inflate(R.layout.item_product, parent, false);
         return new ProductViewHolder(productView);
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         Product item = lstProduct.get(position);
-
-        // Kiểm tra xem có vào hàm này không
-        System.out.println("ProductAdapter - Binding ViewHolder for position: " + position);
-
-        // Gán dữ liệu vào View
-        holder.imAvatar.setImageBitmap(Utils.convertToBitmapFromAssets(context, item.getAvatar()));
         holder.tvName.setText(item.getName());
         holder.tvDescription.setText(item.getDescription());
+        holder.imAvatar.setImageResource(item.getImageResource());
 
-        // Kiểm tra ID của sản phẩm khi click
+        // 🔥 Khi nhấn vào ảnh, mở ProductDetailActivity và truyền product_id
         holder.itemView.setOnClickListener(v -> {
-            System.out.println("ProductAdapter - Clicked Product ID: " + item.getId());
             Intent intent = new Intent(context, ProductDetailActivity.class);
             intent.putExtra("product_id", item.getId()); // Truyền ID sản phẩm
             context.startActivity(intent);
         });
     }
 
+
     @Override
     public int getItemCount() {
         return lstProduct.size();
     }
 
-    public void filter(String string) {
-    }
-
-    public Object getItem(int position) {
-        return lstProduct.get(position);
+    // 🔥 Thêm phương thức filter() để tìm kiếm sản phẩm
+    public void filter(String query) {
+        lstProduct.clear();
+        if (query.isEmpty()) {
+            lstProduct.addAll(lstProductFull); // Nếu chuỗi tìm kiếm rỗng, khôi phục danh sách ban đầu
+        } else {
+            String lowerCaseQuery = query.toLowerCase();
+            for (Product product : lstProductFull) {
+                if (product.getName().toLowerCase().contains(lowerCaseQuery) ||
+                        product.getDescription().toLowerCase().contains(lowerCaseQuery)) {
+                    lstProduct.add(product);
+                }
+            }
+        }
+        notifyDataSetChanged(); // Cập nhật RecyclerView sau khi lọc
     }
 
     class ProductViewHolder extends RecyclerView.ViewHolder {
@@ -81,4 +83,5 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             tvDescription = itemView.findViewById(R.id.tvDescription);
         }
     }
+
 }
