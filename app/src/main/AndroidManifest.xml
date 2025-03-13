@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DoAn"
         tools:targetApi="31">
+        <activity android:name=".SearchActivity"/>
+        <activity android:name=".AccountActivity"/>
         <activity android:name=".SpecialCakeActivity" android:exported="false" />
         <activity android:name=".ProductDetailActivity" android:exported="false" />
         <activity android:name=".Category1Activity" android:exported="false" />
