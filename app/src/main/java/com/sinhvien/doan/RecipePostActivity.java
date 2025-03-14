@@ -38,8 +38,10 @@ public class RecipePostActivity extends AppCompatActivity {
             String imageUrl = intent.getStringExtra("imageUrl");
 
             txtRecipeName.setText(name);
-            txtDifficulty.setText(difficulty);
-            txtTime.setText(time);
+            String existingText = txtDifficulty.getText().toString();
+            txtDifficulty.setText(existingText + " " + difficulty);
+            existingText = txtTime.getText().toString();
+            txtTime.setText(existingText + " " + time);
             txtIngredients.setText(ingredients);
             txtSteps.setText(steps);
 
