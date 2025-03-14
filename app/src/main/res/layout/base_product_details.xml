@@ -42,6 +42,7 @@
                 android:id="@+id/txtRecipeDifficulty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Độ khó: "
                 android:padding="8dp"
                 android:textSize="18sp" />
 
@@ -49,6 +50,7 @@
                 android:id="@+id/txtRecipeTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Thời gian: "
                 android:padding="8dp"
                 android:textSize="18sp" />
         </LinearLayout>
