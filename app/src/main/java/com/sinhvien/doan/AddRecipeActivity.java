@@ -65,10 +65,17 @@ public class AddRecipeActivity extends AppCompatActivity {
         String time = edtTime.getText().toString().trim();
         String ingredients = edtIngredients.getText().toString().trim();
         String steps = edtSteps.getText().toString().trim();
-        String urlimage = edtImage != null ? toString() : "";
+        String urlimage;
+
+        if(edtImage == null) {
+            urlimage = "";
+        }
+        else{
+            urlimage = edtImage.getText().toString();
+        }
 
         if(title.isEmpty() || difficulty.isEmpty() || time.isEmpty() || ingredients.isEmpty() || steps.isEmpty()
-        || urlimage.isEmpty() || selectedCategory.isEmpty())
+        || selectedCategory.isEmpty())
         {
             Toast.makeText(this, "Bạn phải điền hết ô trống còn lại!", Toast.LENGTH_SHORT).show();
             return;
