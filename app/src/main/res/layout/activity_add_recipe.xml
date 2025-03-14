@@ -71,6 +71,17 @@
             android:padding="8dp"
             android:background="@android:drawable/edit_text" />
 
+        <EditText
+            android:id="@+id/edtImageURL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập URL của ảnh"/>
+
+        <Spinner
+            android:id="@+id/spinnerCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <!-- Nút đăng bài -->
         <Button
             android:id="@+id/btnSave"
@@ -82,6 +93,5 @@
             android:backgroundTint="#914F3B"
             android:textColor="@android:color/white"
             android:layout_marginTop="8dp"/>
-
     </LinearLayout>
 </ScrollView>

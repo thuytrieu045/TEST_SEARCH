@@ -8,22 +8,39 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     // Tên database và phiên bản
-    private static final String DATABASE_NAME = "UserDatabase.db";
+    private static final String DATABASE_NAME = "BakingRecipeApp.db";
     private static final int DATABASE_VERSION = 1;
 
     // Tên bảng và cột
+    // Bảng Users
     private static final String TABLE_USERS = "users";
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_USERNAME = "username";
     private static final String COLUMN_PASSWORD = "password";
-    private static final String COLUMN_ROLE = "role"; // "user" hoặc "admin"
+    private static final String COLUMN_ROLE = "role"; // "user" or "admin"
 
-    // Truy vấn tạo bảng
+    // Bảng Recipes
+    private static final String TABLE_RECIPES = "recipes";
+    private static final String COLUMN_RECIPE_ID = "recipe_id";
+    private static final String COLUMN_RECIPE_NAME = "recipe_name";
+    private static final String COLUMN_INGREDIENTS = "ingredients";
+    private static final String COLUMN_USER_ID = "user_id"; // Khóa ngoại (User tạo công thức)
+
+    // Tạo bảng Users
     private static final String CREATE_TABLE_USERS = "CREATE TABLE " + TABLE_USERS + " (" +
             COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COLUMN_USERNAME + " TEXT UNIQUE, " +
             COLUMN_PASSWORD + " TEXT, " +
             COLUMN_ROLE + " TEXT)";
+
+    // Tạo bảng Recipes
+    private static final String CREATE_TABLE_RECIPES = "CREATE TABLE " + TABLE_RECIPES + " (" +
+            COLUMN_RECIPE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            COLUMN_RECIPE_NAME + " TEXT, " +
+            COLUMN_INGREDIENTS + " TEXT, " +
+            COLUMN_USER_ID + " INTEGER, " +
+            "FOREIGN KEY (" + COLUMN_USER_ID + ") REFERENCES " + TABLE_USERS + "(" + COLUMN_ID + "))";
+
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -32,6 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_USERS);
+        db.execSQL(CREATE_TABLE_RECIPES);
     }
 
     @Override
@@ -40,7 +58,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    // 🔥 Hàm đăng ký tài khoản
+    // Hàm đăng ký tài khoản
     public boolean registerUser(String username, String password, String role) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -52,7 +70,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result != -1; // Nếu insert thành công, trả về true
     }
 
-    // 🔥 Hàm kiểm tra đăng nhập
+    // Hàm kiểm tra đăng nhập
     public boolean checkLogin(String username, String password, String role) {
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT * FROM " + TABLE_USERS + " WHERE " +

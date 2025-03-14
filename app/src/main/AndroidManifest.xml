@@ -20,6 +20,7 @@
         <activity android:name=".Category1Activity" android:exported="false" />
         <activity android:name=".Category2Activity" android:exported="false" />
         <activity android:name=".Category3Activity" android:exported="false" />
+        <activity android:name=".RecipePostActivity" />
 
         <activity
             android:name=".MainActivity"
