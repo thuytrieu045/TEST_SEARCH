@@ -49,9 +49,9 @@ public class Category1Activity extends AppCompatActivity {
     }
 
     private void loadData() {
-        lstProduct.add(new Product("1", "Choco", "Bánh Choco là bánh quy phủ sô cô la, thường có nhân kem hoặc mềm bên trong", "banhchoco.jpg", 5.99, R.drawable.choco));
-        lstProduct.add(new Product("2", "Flan", "Bánh caramel mềm mịn, làm từ trứng, sữa và đường.", "bread.jpg", 3.49, R.drawable.flan));
-        lstProduct.add(new Product("3", "Rocher", "Ferrero Rocher Chocolate", "rocher.jpg", 6.99, R.drawable.rocher));
-        lstProduct.add(new Product("4", "Tiramisu", "Món tráng miệng Ý, gồm bánh ladyfingers nhúng cà phê, kem mascarpone và cacao.", "tiramisu.jpg", 6.99, R.drawable.tiraminsu));
+        lstProduct.add(new Product("1", "Choco", "Bánh Choco là bánh quy phủ sô cô la, thường có nhân kem hoặc mềm bên trong", "banhchoco.jpg", R.drawable.choco));
+        lstProduct.add(new Product("2", "Flan", "Bánh caramel mềm mịn, làm từ trứng, sữa và đường.", "bread.jpg", R.drawable.flan));
+        lstProduct.add(new Product("3", "Rocher", "Ferrero Rocher Chocolate", "rocher.jpg", R.drawable.rocher));
+        lstProduct.add(new Product("4", "Tiramisu", "Món tráng miệng Ý, gồm bánh ladyfingers nhúng cà phê, kem mascarpone và cacao.", "tiramisu.jpg", R.drawable.tiraminsu));
     }
 }
