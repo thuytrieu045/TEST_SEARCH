@@ -2,6 +2,7 @@ package com.sinhvien.doan;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -53,6 +54,12 @@ public class RecipePostActivity extends AppCompatActivity {
             }
         }
 
-        btnBack.setOnClickListener(v -> finish());
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RecipePostActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

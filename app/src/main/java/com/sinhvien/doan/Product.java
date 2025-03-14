@@ -5,26 +5,23 @@ public class Product {
     private String name;
     private String description;
     private String avatar;
-    private double price;  // Thêm biến price
     private int imageResource; // Thêm biến hình ảnh
 
     // Constructor đầy đủ
-    public Product(String id, String name, String description, String avatar, double price, int imageResource) {
+    public Product(String id, String name, String description, String avatar, int imageResource) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.avatar = avatar;
-        this.price = price;
         this.imageResource = imageResource;
     }
 
     // Constructor đơn giản hơn
-    public Product(int id, String name, String description, double price, int imageResource) {
+    public Product(int id, String name, String description, int imageResource) {
         this.id = String.valueOf(id);
         this.name = name;
         this.description = description;
         this.avatar = ""; // Nếu không có ảnh URL
-        this.price = price;
         this.imageResource = imageResource;
     }
 
@@ -58,14 +55,6 @@ public class Product {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
-    }
-
-    public double getPrice() {
-        return price;  // Trả về giá thực tế
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public int getImageResource() {

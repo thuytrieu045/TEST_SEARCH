@@ -65,14 +65,8 @@ public class AddRecipeActivity extends AppCompatActivity {
         String time = edtTime.getText().toString().trim();
         String ingredients = edtIngredients.getText().toString().trim();
         String steps = edtSteps.getText().toString().trim();
-        String urlimage;
+        String urlimage = edtImage != null ? edtImage.getText().toString() : "";
 
-        if(edtImage == null) {
-            urlimage = "";
-        }
-        else{
-            urlimage = edtImage.getText().toString();
-        }
 
         if(title.isEmpty() || difficulty.isEmpty() || time.isEmpty() || ingredients.isEmpty() || steps.isEmpty()
         || selectedCategory.isEmpty())
