@@ -41,7 +41,7 @@ public class RecipePostActivity extends AppCompatActivity {
             txtDifficulty.setText(difficulty);
             txtTime.setText(time);
             txtIngredients.setText(ingredients);
-            txtSteps.setText(imageUrl);
+            txtSteps.setText(steps);
 
 
             if (imageUrl != null && !imageUrl.isEmpty()) {
