@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Nút Quay lại -->
+        <Button
+            android:id="@+id/btnBackToHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quay lại"
+            android:padding="10dp"
+            android:backgroundTint="#D58D57"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="8dp"/>
+
+        <!-- Tiêu đề công thức -->
+        <EditText
+            android:id="@+id/edtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tên công thức"
+            android:textSize="18sp"
+            android:padding="8dp"
+            android:background="@android:drawable/edit_text" />
+
+        <!-- Độ khó và thời gian -->
+        <EditText
+            android:id="@+id/edtDifficulty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Độ khó"
+            android:padding="8dp"
+            android:background="@android:drawable/edit_text" />
+
+        <EditText
+            android:id="@+id/edtTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Thời gian (phút)"
+            android:padding="8dp"
+            android:background="@android:drawable/edit_text"
+            android:inputType="number" />
+
+        <!-- Nguyên liệu -->
+        <EditText
+            android:id="@+id/edtIngredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập nguyên liệu, mỗi dòng một nguyên liệu"
+            android:minLines="3"
+            android:maxLines="5"
+            android:padding="8dp"
+            android:background="@android:drawable/edit_text" />
+
+        <!-- Hướng dẫn -->
+        <EditText
+            android:id="@+id/edtSteps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập hướng dẫn từng bước"
+            android:minLines="5"
+            android:maxLines="10"
+            android:padding="8dp"
+            android:background="@android:drawable/edit_text" />
+
+        <!-- Nút đăng bài -->
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đăng bài"
+            android:padding="12dp"
+            android:textSize="18sp"
+            android:backgroundTint="#914F3B"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+</ScrollView>
