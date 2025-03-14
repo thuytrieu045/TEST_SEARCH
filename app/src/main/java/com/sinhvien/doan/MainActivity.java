@@ -59,7 +59,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (itemId == R.id.mnHome) {
                     return true; // Đang ở trang Home, không cần chuyển
-                } else if (itemId == R.id.mnSearch) {
+                } else if (itemId == R.id.mnPost) {
+                    startActivity(new Intent(MainActivity.this, AddRecipeActivity.class)); // Chuyển đến SearchActivity
+                    return true;
+                }else if (itemId == R.id.mnSearch) {
                     startActivity(new Intent(MainActivity.this, SearchActivity.class)); // Chuyển đến SearchActivity
                     return true;
                 } else if (itemId == R.id.mnAccount) {

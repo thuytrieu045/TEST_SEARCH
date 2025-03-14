@@ -52,11 +52,7 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         // Nút quay lại trang Home
-        btnBackToHome.setOnClickListener(v -> {
-            Intent intent = new Intent(SearchActivity.this, MainActivity.class);
-            startActivity(intent);
-            finish();
-        });
+        btnBackToHome.setOnClickListener(v -> finish());
     }
 
     private void loadProducts() {
