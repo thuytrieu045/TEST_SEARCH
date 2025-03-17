@@ -2,7 +2,7 @@ package com.sinhvien.doan;
 
 public class Product {
     private String id;
-    private String name;
+    private String name,imgURL;
     private String description;
     private String avatar;
     private int imageResource; // Thêm biến hình ảnh
@@ -24,6 +24,9 @@ public class Product {
         this.avatar = ""; // Nếu không có ảnh URL
         this.imageResource = imageResource;
     }
+
+    //Constructor tạm thời
+
 
     public String getId() {
         return id;

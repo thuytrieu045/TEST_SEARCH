@@ -2,10 +2,8 @@ package com.sinhvien.doan;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -13,41 +11,32 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.Firebase;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-private FirebaseAuth mAuth;
+    FirebaseAuth auth;
+    FirebaseUser user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        //Khúc na của Firebase
-        mAuth = FirebaseAuth.getInstance();
 
-        String email = "ThuyTrieu@gmail.com";
-        String pass ="Snowwhite@2005";
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+        if(user == null){
+            Intent in = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(in);
+            finish();
+        }
+        else{
 
-        mAuth.createUserWithEmailAndPassword(email, pass ).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
+        }
 
-                }else {
-                    Log.w("Main", "createUserWithEmail:failure", task.getException());
-                    Toast.makeText(MainActivity.this, task.getException().getMessage(),
-                            Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
         // Xử lý sự kiện nhấn nút "Sweet Desert"
         Button button = findViewById(R.id.btnSweetDesert);
         Intent intent = new Intent(this, Category1Activity.class);
@@ -90,15 +79,16 @@ private FirebaseAuth mAuth;
                     startActivity(new Intent(MainActivity.this, SearchActivity.class)); // Chuyển đến SearchActivity
                     return true;
                 } else if (itemId == R.id.mnAccount) {
-                    startActivity(new Intent(MainActivity.this, AccountActivity.class));
+                    FirebaseAuth.getInstance().signOut();
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(intent);
+                    finish();
                     return true;
                 }
-
                 return false;
             }
 
         });
-
         // Xử lý tự động căn lề phù hợp với hệ thống
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
