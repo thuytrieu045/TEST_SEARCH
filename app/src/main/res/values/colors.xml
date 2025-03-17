@@ -7,4 +7,6 @@
     <color name="yellow">#FFEB3B</color> <!-- Vàng sáng -->
     <color name="pink_dark">#C2185B</color> <!-- Hồng đậm -->
     <color name="pink_light">#FF69B4</color> <!-- Hồng nhẹ -->
+    <color name="Nau_caramel">#8D6E63</color> <!-- Hồng nhẹ -->
+    <color name="Nau_sua">#6D4C41</color> <!-- Hồng nhẹ -->
 </resources>

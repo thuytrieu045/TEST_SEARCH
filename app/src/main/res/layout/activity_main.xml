@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:id="@+id/main"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_main_gradient"
+    android:background="#FDF6EC"
     tools:context=".MainActivity">
 
     <!-- 🌟 Banner -->
@@ -27,7 +27,7 @@
         android:text="Catergory"
         android:textStyle="bold"
         android:textSize="18sp"
-        android:textColor="@color/white"
+        android:textColor="@color/Nau_caramel"
         android:layout_marginTop="15dp"
         app:layout_constraintTop_toBottomOf="@id/imgBanner"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,8 +58,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:padding="8dp"
-                android:background="@drawable/custom_border">  <!-- 🔥 Áp dụng viền -->
+                android:padding="8dp">
 
                 <ImageView
                     android:layout_width="100dp"
@@ -73,7 +72,7 @@
                     android:text="Sweet Dessert"
                     android:textSize="12sp"
                     android:textColor="@color/white"
-                    android:backgroundTint="@color/pink_light"
+                    android:backgroundTint="@color/Nau_sua"
                     app:cornerRadius="50dp"
                     android:layout_marginTop="5dp"/>
             </LinearLayout>
@@ -94,8 +93,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:padding="8dp"
-                android:background="@drawable/custom_border">  <!-- 🔥 Áp dụng viền -->
+                android:padding="8dp">
 
                 <ImageView
                     android:layout_width="100dp"
@@ -109,7 +107,7 @@
                     android:text="Breakfast"
                     android:textSize="10sp"
                     android:textColor="@color/white"
-                    android:backgroundTint="@color/pink_light"
+                    android:backgroundTint="@color/Nau_sua"
                     app:cornerRadius="50dp"
                     android:layout_marginTop="5dp"/>
             </LinearLayout>
@@ -130,8 +128,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:padding="8dp"
-                android:background="@drawable/custom_border">  <!-- 🔥 Áp dụng viền -->
+                android:padding="8dp">
 
                 <ImageView
                     android:layout_width="100dp"
@@ -145,7 +142,7 @@
                     android:text="Birthday Cake"
                     android:textSize="12sp"
                     android:textColor="@color/white"
-                    android:backgroundTint="@color/pink_light"
+                    android:backgroundTint="@color/Nau_sua"
                     app:cornerRadius="50dp"
                     android:layout_marginTop="5dp"/>
             </LinearLayout>
@@ -162,7 +159,7 @@
         android:text="Today's special cake"
         android:textStyle="bold"
         android:textSize="18sp"
-        android:textColor="@color/white"
+        android:textColor="@color/Nau_caramel"
         android:layout_marginTop="15dp"
         app:layout_constraintTop_toBottomOf="@id/gridCategory"
         app:layout_constraintStart_toStartOf="parent"
@@ -197,7 +194,7 @@
                 android:text="View Information"
                 android:textSize="12sp"
                 android:textColor="@color/white"
-                android:backgroundTint="@color/pink_light"
+                android:backgroundTint="@color/Nau_sua"
                 app:cornerRadius="50dp"
                 android:layout_marginTop="5dp"/>
 
@@ -212,8 +209,8 @@
         android:background="@android:color/transparent"
     android:elevation="8dp"
     app:labelVisibilityMode="labeled"
-    app:itemIconTint="@color/white"
-    app:itemTextColor="@color/white"
+    app:itemIconTint="@color/Nau_sua"
+    app:itemTextColor="@color/Nau_sua"
     app:itemRippleColor="@android:color/transparent"
     app:menu="@menu/mnbottom"
     app:layout_constraintBottom_toBottomOf="parent"/>
