@@ -54,14 +54,14 @@ private FirebaseAuth mAuth;
         button.setOnClickListener(v -> v.getContext().startActivity(intent));
 
         // Xử lý sự kiện nhấn nút "Breakfast"
-        Button btnBreakfast = findViewById(R.id.btnbreakfast);
+        Button btnBreakfast = findViewById(R.id.btnBreakfast);
         btnBreakfast.setOnClickListener(v -> {
             Intent intent2 = new Intent(MainActivity.this, Category2Activity.class);
             startActivity(intent2);
         });
 
         // Xử lý sự kiện nhấn nút "Birthday Cake"
-        Button btnbirthdaycake = findViewById(R.id.btnbirthdaycake);
+        Button btnbirthdaycake = findViewById(R.id.btnBirthdayCake);
         btnbirthdaycake.setOnClickListener(v -> {
             Intent intent3 = new Intent(MainActivity.this, Category3Activity.class);
             startActivity(intent3);
