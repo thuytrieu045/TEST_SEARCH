@@ -41,7 +41,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.tvDescription.setText(item.getDescription());
         holder.imAvatar.setImageResource(item.getImageResource());
 
-        // 🔥 Khi nhấn vào ảnh, mở ProductDetailActivity và truyền product_id
+        // Khi nhấn vào ảnh, mở ProductDetailActivity và truyền product_id
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, ProductDetailActivity.class);
             intent.putExtra("product_id", item.getId()); // Truyền ID sản phẩm

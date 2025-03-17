@@ -27,6 +27,16 @@ public class SignupActivity extends AppCompatActivity {
     private TextView txtLogin;
     private FirebaseAuth mAuth;
 
+    public void onStart()  {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +48,6 @@ public class SignupActivity extends AppCompatActivity {
         btnsignup = findViewById(R.id.btnsignup);
         txtLogin = findViewById(R.id.txtLogin);
         mAuth = FirebaseAuth.getInstance();
-
-
 
         btnsignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,11 +78,7 @@ public class SignupActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
-                                    Log.d(TAG, "createUserWithEmail:success");
-                                    FirebaseUser user = mAuth.getCurrentUser();
                                     Intent in = new Intent(SignupActivity.this,LoginActivity.class);
-                                    in.putExtra("email",email);
-                                    in.putExtra("password",password);
                                     startActivity(in);
                                     Toast.makeText(SignupActivity.this, "Đăng Kí Thành Công!",
                                             Toast.LENGTH_SHORT).show();
@@ -93,6 +97,7 @@ public class SignupActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent in = new Intent(SignupActivity.this, LoginActivity.class);
                 startActivity(in);
+                finish();
             }
         });
 

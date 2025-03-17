@@ -27,6 +27,16 @@ public class LoginActivity extends AppCompatActivity {
     private TextView txtSignup,txtForgerPass;
     private FirebaseAuth mAuth;
 
+    public void onStart()  {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,8 +62,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String email = edmail.getText().toString();
-                String password = edpassword.getText().toString();
+                String email = String.valueOf(edmail.getText());
+                String password = String.valueOf(edpassword.getText());
                 if (email.isEmpty()||password.isEmpty()){
                     Toast.makeText(LoginActivity.this, "Không được bỏ trống!", Toast.LENGTH_SHORT).show();
                     return;
@@ -63,18 +73,15 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
                 mAuth.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    Log.d(TAG, "signInWithEmail:success");
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    Toast.makeText(LoginActivity.this, "Đăng Nhập Thành công", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                                    Toast.makeText(getApplicationContext(), "Đăng Nhập Thành công", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                                     startActivity(intent);
-
+                                    finish();
                                 } else {
-                                    Log.w(TAG, "signInWithEmail:failure", task.getException());
                                     Toast.makeText(LoginActivity.this, "Sai Tài Khoản Hoặc Mật khẩu!",
                                             Toast.LENGTH_SHORT).show();
                                 }
@@ -86,8 +93,9 @@ public class LoginActivity extends AppCompatActivity {
         txtSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(LoginActivity.this, SignupActivity.class);
+                Intent in = new Intent(getApplicationContext(), SignupActivity.class);
                 startActivity(in);
+                finish();
             }
         });
     }
