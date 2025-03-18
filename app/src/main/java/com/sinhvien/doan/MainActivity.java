@@ -17,25 +17,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-    FirebaseAuth auth;
-    FirebaseUser user;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-
-        auth = FirebaseAuth.getInstance();
-        user = auth.getCurrentUser();
-        if(user == null){
-            Intent in = new Intent(getApplicationContext(), LoginActivity.class);
-            startActivity(in);
-            finish();
-        }
-        else{
-
-        }
 
         // Xử lý sự kiện nhấn nút "Sweet Desert"
         Button button = findViewById(R.id.btnSweetDesert);
@@ -62,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent4);
         });
 
-
         // Xử lý sự kiện BottomNavigationView
         BottomNavigationView bottomNavigationView = findViewById(R.id.navMenu);
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
@@ -79,10 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this, SearchActivity.class)); // Chuyển đến SearchActivity
                     return true;
                 } else if (itemId == R.id.mnAccount) {
-                    FirebaseAuth.getInstance().signOut();
-                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                    startActivity(intent);
-                    finish();
+                    startActivity(new Intent(MainActivity.this, AccountActivity.class)); //Chuyển đến AccountActivity
                     return true;
                 }
                 return false;
