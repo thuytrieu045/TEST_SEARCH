@@ -1,5 +1,6 @@
 package com.sinhvien.doan;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -55,6 +56,9 @@ public class ViewPostActivity extends AppCompatActivity {
             imgRecipe.setImageResource(R.drawable.dessert);
         }
 
-        btnBack.setOnClickListener(v -> finish());
+        btnBack.setOnClickListener(v -> {Intent intent = new Intent(ViewPostActivity.this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();});
     }
 }
