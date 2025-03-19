@@ -79,7 +79,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
             imAvatar = itemView.findViewById(R.id.ivAvatar);
-            tvName = itemView.findViewById(R.id.tvName);
+            tvName = itemView.findViewById(R.id.tvRecipeName);
             tvDescription = itemView.findViewById(R.id.tvDescription);
         }
     }

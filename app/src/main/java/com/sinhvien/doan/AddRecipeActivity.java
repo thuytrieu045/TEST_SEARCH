@@ -1,6 +1,8 @@
 package com.sinhvien.doan;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,6 +14,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,10 +24,13 @@ public class AddRecipeActivity extends AppCompatActivity {
     private EditText edtTitle, edtDifficulty,edtTime,edtIngredients,edtSteps,edtImage;
     private Spinner spinnerCategory;
     private String selectedCategory;
+    private DatabaseHelper databaseHelper;
     private List<Product> listProduct;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_recipe);
+
+        databaseHelper = new DatabaseHelper(this);
 
         edtTitle = findViewById(R.id.edtTitle);
         edtDifficulty = findViewById(R.id.edtDifficulty);
@@ -54,6 +62,7 @@ public class AddRecipeActivity extends AppCompatActivity {
         // Nút quay lại trang Home
         btnBackToHome.setOnClickListener(v -> finish());
 
+        // Nút đăng bài
         btnSubmit.setOnClickListener(v -> sendRecipeData());
     }
 
@@ -64,8 +73,8 @@ public class AddRecipeActivity extends AppCompatActivity {
         String difficulty = edtDifficulty.getText().toString().trim();
         String time = edtTime.getText().toString().trim();
         String ingredients = edtIngredients.getText().toString().trim();
-        String steps = edtSteps.getText().toString().trim();
-        String urlimage = edtImage != null ? edtImage.getText().toString() : "";
+        String steps = edtSteps.getText().toString();
+        String urlImg = edtImage != null ? edtImage.getText().toString() : "";
 
 
         if(title.isEmpty() || difficulty.isEmpty() || time.isEmpty() || ingredients.isEmpty() || steps.isEmpty()
@@ -75,13 +84,48 @@ public class AddRecipeActivity extends AppCompatActivity {
             return;
         }
 
+        // Lưu công thức vào database
+        int categoryValue = 0;
+        if(selectedCategory.equals("Sweet Dessert")) {
+            categoryValue = 1;
+        }
+        else if(selectedCategory.equals("Breakfast")) {
+            categoryValue = 2;
+        }
+        else if(selectedCategory.equals("Birthday Cake")) {
+            categoryValue = 3;
+        }
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            String firebaseUid = user.getUid(); // Get Firebase UID
+            int userId = databaseHelper.getUserId(firebaseUid); // Convert to integer user_id
+
+            SQLiteDatabase db = databaseHelper.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put("recipe_name", title);
+            values.put("ingredients", ingredients);
+            values.put("steps", steps);
+            values.put("user_id", userId); // Store user_id
+            values.put("cate", categoryValue);  // Store category
+            values.put("img_src", urlImg);
+
+            long newRowId = db.insert("recipes", null, values);
+            if (newRowId == -1) {
+                Toast.makeText(this, "Lưu công thức thất bại!", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Lưu công thức thành công!", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        //Chuyển sang RecipePostActivity
         Intent intent = new Intent(AddRecipeActivity.this, RecipePostActivity.class);
         intent.putExtra("title", title);
         intent.putExtra("difficulty", difficulty);
         intent.putExtra("ingredients", ingredients);
         intent.putExtra("steps", steps);
         intent.putExtra("time", time);
-        intent.putExtra("imageUrl", urlimage);
+        intent.putExtra("imageUrl", urlImg);
         startActivity(intent);
     }
 }
