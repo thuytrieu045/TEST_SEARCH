@@ -30,7 +30,14 @@
             android:padding="8dp"
             android:gravity="center"
             android:textColor="#000000" />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chuẩn bị:"
+            android:textSize="20sp"
+            android:background="#a66a44"
+            android:padding="8dp"
+            android:textColor="@android:color/white"/>
         <!-- Độ khó & thời gian -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,15 +64,6 @@
 
         <!-- Danh sách nguyên liệu -->
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Chuẩn bị:"
-            android:textSize="20sp"
-            android:background="#a66a44"
-            android:padding="8dp"
-            android:textColor="@android:color/white"/>
-
-        <TextView
             android:id="@+id/txtIngredients"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,7 +74,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Steps:"
+            android:text="Bước làm:"
             android:textSize="20sp"
             android:background="#a66a44"
             android:padding="8dp"
@@ -96,7 +94,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#914F3B"
-            android:text="Back"
+            android:text="Quay lại"
             android:textSize="18sp"
             android:textColor="@android:color/white"
             android:padding="8dp"

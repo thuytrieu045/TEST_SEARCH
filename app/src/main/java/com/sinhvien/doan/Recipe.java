@@ -8,8 +8,10 @@ public class Recipe {
     private String imgSource;
     private int category_id;
     private String steps;
+    private int time;
+    private String difficulty;
 
-    public Recipe(int recipeId, String recipeName, String ingredients, String steps, int userId, String imgSource, int category_id) {
+    public Recipe(int recipeId, String recipeName, String ingredients, String steps, int userId, String imgSource, int category_id, int time, String difficulty) {
         this.recipeId = recipeId;
         this.recipeName = recipeName;
         this.ingredients = ingredients;
@@ -17,6 +19,8 @@ public class Recipe {
         this.userId = userId;
         this.imgSource = imgSource;
         this.category_id = category_id;
+        this.time = time;
+        this.difficulty = difficulty;
     }
 
     public Recipe(String recipeName, String steps, String imgSource, int category_id)
@@ -82,4 +86,9 @@ public class Recipe {
     public void setCategory_id(int category_id) {
         this.category_id = category_id;
     }
+
+    public int getTime() {return time;}
+    public void setTime(int time) {this.time = time;}
+    public String getDifficulty() {return difficulty;}
+    public void setDifficulty(String difficulty) {this.difficulty = difficulty;}
 }

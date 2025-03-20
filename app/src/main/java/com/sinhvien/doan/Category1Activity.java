@@ -9,14 +9,13 @@ import androidx.recyclerview.widget.ConcatAdapter;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Category1Activity extends AppCompatActivity {
     private RecyclerView rvListC;
     private ProductAdapter productAdapter;
     private RecipeAdapter recipeAdapter;
-    private List<Product> lstProduct;
-    private List<Recipe> lstRecipe;
+    private ArrayList<Product> lstProduct;
+    private ArrayList<Recipe> lstRecipe;
     private MyDataBase myDatabase;
 
     @Override
@@ -28,13 +27,13 @@ public class Category1Activity extends AppCompatActivity {
         Button button = findViewById(R.id.btnback);
         button.setOnClickListener(v -> finish());
 
-        // Khởi tạo initialize
+        // Khởi tạo
         rvListC = findViewById(R.id.rvList);
         lstProduct = new ArrayList<>();
         lstRecipe = new ArrayList<>();
         myDatabase = new MyDataBase(this); // Khởi tạo database
 
-        // Load Data
+        // Load dữ liệu sản phẩm
         loadProductData();
         boolean hasRecipes = loadRecipeData(); // Kiểm tra nếu có bài đã được đăng
 
@@ -50,7 +49,7 @@ public class Category1Activity extends AppCompatActivity {
         }
     }
 
-    // Load Product Data
+    // Load dữ liệu Product
     private void loadProductData() {
         lstProduct.add(new Product("1", "Choco", "Bánh Choco là bánh quy phủ sô cô la", "banhchoco.jpg", R.drawable.choco));
         lstProduct.add(new Product("2", "Flan", "Bánh caramel mềm mịn", "bread.jpg", R.drawable.flan));
@@ -58,7 +57,7 @@ public class Category1Activity extends AppCompatActivity {
         lstProduct.add(new Product("4", "Tiramisu", "Món tráng miệng Ý", "tiramisu.jpg", R.drawable.tiraminsu));
     }
 
-    // Load Recipes từ Database (CATEGORY 1)
+    // Load dữ liệu Recipe từ Category2
     private boolean loadRecipeData() {
         Cursor cursor = myDatabase.getRecipeByCategory(1); // Load category 1 (Sweet Dessert)
         if (cursor != null && cursor.moveToFirst()) {
@@ -70,7 +69,9 @@ public class Category1Activity extends AppCompatActivity {
                         cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_STEPS)),
                         cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_USER_ID)),
                         cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_IMG_URL)),
-                        cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_CATEGORY))
+                        cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_CATEGORY)),
+                        cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_TIME)),
+                        cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_DOKHO))
                 );
                 lstRecipe.add(recipe);
             } while (cursor.moveToNext());

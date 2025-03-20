@@ -21,7 +21,9 @@ public class MyDataBase {
                 DatabaseHelper.COT_STEPS,
                 DatabaseHelper.COT_USER_ID,
                 DatabaseHelper.COT_IMG_URL,
-                DatabaseHelper.COT_CATEGORY
+                DatabaseHelper.COT_CATEGORY,
+                DatabaseHelper.COT_TIME,
+                DatabaseHelper.COT_DOKHO
         };
 
         return database.query(
@@ -41,6 +43,8 @@ public class MyDataBase {
         values.put(DatabaseHelper.COT_USER_ID, recipe.getUserId());
         values.put(DatabaseHelper.COT_IMG_URL, recipe.getImgSource());
         values.put(DatabaseHelper.COT_CATEGORY, recipe.getCategory_id());
+        values.put(DatabaseHelper.COT_TIME, recipe.getTime());
+        values.put(DatabaseHelper.COT_DOKHO, recipe.getDifficulty());
 
         return database.insert(DatabaseHelper.BANG_RECIPES, null, values);
     }
@@ -61,6 +65,9 @@ public class MyDataBase {
         values.put(DatabaseHelper.COT_INGREDIENTS, recipe.getIngredients());
         values.put(DatabaseHelper.COT_STEPS, recipe.getSteps());  // Added steps
         values.put(DatabaseHelper.COT_IMG_URL, recipe.getImgSource());
+        values.put(DatabaseHelper.COT_TIME, recipe.getTime());
+        values.put(DatabaseHelper.COT_DOKHO, recipe.getDifficulty());
+        values.put(DatabaseHelper.COT_CATEGORY, recipe.getCategory_id());
 
         return database.update(
                 DatabaseHelper.BANG_RECIPES,
@@ -83,7 +90,9 @@ public class MyDataBase {
                         DatabaseHelper.COT_STEPS,  // Added steps
                         DatabaseHelper.COT_USER_ID,
                         DatabaseHelper.COT_IMG_URL,
-                        DatabaseHelper.COT_CATEGORY
+                        DatabaseHelper.COT_CATEGORY,
+                        DatabaseHelper.COT_TIME,
+                        DatabaseHelper.COT_DOKHO
                 },
                 DatabaseHelper.COT_RECIPE_ID + " = ?",
                 new String[]{String.valueOf(recipeId)},
@@ -98,7 +107,9 @@ public class MyDataBase {
                     cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_STEPS)),
                     cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_USER_ID)),
                     cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_IMG_URL)),
-                    cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_CATEGORY))
+                    cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_CATEGORY)),
+                    cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_TIME)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_DOKHO))
             );
             cursor.close();
         }
