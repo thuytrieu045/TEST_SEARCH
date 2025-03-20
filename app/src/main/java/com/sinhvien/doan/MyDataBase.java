@@ -30,7 +30,7 @@ public class MyDataBase {
                 DatabaseHelper.BANG_RECIPES,
                 cot,
                 null, null, null, null,
-                DatabaseHelper.COT_RECIPE_ID + " DESC"
+                DatabaseHelper.COT_CATEGORY + " DESC"
         );
     }
 

@@ -85,5 +85,21 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
             tvIngredients = itemView.findViewById(R.id.tvDescription);
             imAvatar = itemView.findViewById(R.id.ivAvatar);
         }
+
+        public void filter(String text) {
+            lstRecipe.clear();
+            if(text.isEmpty()) {
+                lstRecipe.addAll(lstRecipeFull);
+            }
+            else {
+                text = text.toLowerCase();
+                for (Recipe recipe : lstRecipeFull) {
+                    if (recipe.getRecipeName().toLowerCase().contains(text)) {
+                        lstRecipe.add(recipe);
+                    }
+                }
+            }
+            notifyDataSetChanged();
+        }
     }
 }

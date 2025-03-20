@@ -12,10 +12,10 @@ public class RecipeDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // ✅ Initialize Database
+        // Triển khai DB
         myDatabase = new MyDataBase(this);
 
-        // ✅ Get Recipe ID
+        // Lấy Recipe id
         int recipeId = getIntent().getIntExtra("recipe_id", -1);
         if (recipeId != -1) {
             loadRecipeDetails(recipeId);
