@@ -47,6 +47,12 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
                 .error(R.drawable.donut_icon) // Optional error image
                 .into(holder.imAvatar);
 
+        holder.imAvatar.setOnClickListener(v -> {
+            Intent intent = new Intent(context, RecipeDetailActivity.class);
+            intent.putExtra("recipe_id", item.getRecipeId());
+            context.startActivity(intent);
+        });
+
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, RecipeDetailActivity.class);
             intent.putExtra("recipe_id", item.getRecipeId());
@@ -84,22 +90,6 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
             tvRecipeName = itemView.findViewById(R.id.tvRecipeName);
             tvIngredients = itemView.findViewById(R.id.tvDescription);
             imAvatar = itemView.findViewById(R.id.ivAvatar);
-        }
-
-        public void filter(String text) {
-            lstRecipe.clear();
-            if(text.isEmpty()) {
-                lstRecipe.addAll(lstRecipeFull);
-            }
-            else {
-                text = text.toLowerCase();
-                for (Recipe recipe : lstRecipeFull) {
-                    if (recipe.getRecipeName().toLowerCase().contains(text)) {
-                        lstRecipe.add(recipe);
-                    }
-                }
-            }
-            notifyDataSetChanged();
         }
     }
 }
