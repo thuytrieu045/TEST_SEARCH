@@ -1,6 +1,7 @@
 package com.sinhvien.doan;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ConcatAdapter;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,8 +18,11 @@ import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
     private ProductAdapter adapter;
+    private RecipeAdapter recipeAdapter;
     private List<Product> productList;
+    private List<Recipe> recipesList;
     private RecyclerView recyclerView;
+    private MyDataBase myDataBase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +35,22 @@ public class SearchActivity extends AppCompatActivity {
 
         // Khởi tạo danh sách sản phẩm
         productList = new ArrayList<Product>();
+        recipesList = new ArrayList<Recipe>();
         loadProducts(); // Gọi hàm để load dữ liệu mẫu
+        myDataBase = new MyDataBase(this);
+
+        boolean hasRecipePosts = loadRecipes(); // Hàm kiểm tra tồn tại bài đăng công thức
 
         // Cấu hình RecyclerView
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new ProductAdapter(this, productList);
-        recyclerView.setAdapter(adapter);
+        if(hasRecipePosts) {
+            recipeAdapter = new RecipeAdapter(this, recipesList);
+            recyclerView.setAdapter(new ConcatAdapter(adapter, recipeAdapter));
+        }
+        else {
+            recyclerView.setAdapter(adapter);
+        }
 
         // Xử lý tìm kiếm
         searchBar.addTextChangedListener(new TextWatcher() {
@@ -45,6 +60,7 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 adapter.filter(s.toString()); // Gọi hàm lọc từ ProductAdapter
+                recipeAdapter.filter(s.toString()); // Gọi hàm lọc từ RecipeAdapter
             }
 
             @Override
@@ -76,4 +92,25 @@ public class SearchActivity extends AppCompatActivity {
         }
     }
 
+    private boolean loadRecipes() {
+        Cursor cursor = myDataBase.layTatCaDuLieu();
+        if(cursor != null && cursor.moveToFirst()) {
+            do {
+                Recipe recipe = new Recipe(
+                        cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_RECIPE_ID)),
+                        cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_TEN_RECIPE)),
+                        cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_INGREDIENTS)),
+                        cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_STEPS)),
+                        cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_USER_ID)),
+                        cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_IMG_URL)),
+                        cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_CATEGORY)),
+                        cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_TIME)),
+                        cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COT_DOKHO))
+                );
+                recipesList.add(recipe);
+            }while(cursor.moveToNext());
+            cursor.close();
+        }
+        return !recipesList.isEmpty();
+    }
 }
