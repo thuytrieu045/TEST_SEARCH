@@ -69,15 +69,25 @@ public class AddRecipeActivity extends AppCompatActivity {
 
     private void sendRecipeData()
     {
-        String title = edtTitle.getText().toString().trim();
+        String name = edtTitle.getText().toString().trim();
         String difficulty = edtDifficulty.getText().toString().trim();
-        String time = edtTime.getText().toString().trim();
         String ingredients = edtIngredients.getText().toString().trim();
         String steps = edtSteps.getText().toString();
         String urlImg = edtImage != null ? edtImage.getText().toString() : "";
+        int time = 0;
+        try {
+            time = Integer.parseInt(edtTime.getText().toString().trim());
+            if (time <= 0) {
+                Toast.makeText(this, "Thời gian phải lớn hơn 0!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+        } catch (NumberFormatException e) {
+            Toast.makeText(this, "Vui lòng nhập số hợp lệ cho thời gian!", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
 
-        if(title.isEmpty() || difficulty.isEmpty() || time.isEmpty() || ingredients.isEmpty() || steps.isEmpty()
+        if(name.isEmpty() || difficulty.isEmpty() || time == 0 || ingredients.isEmpty() || steps.isEmpty()
         || selectedCategory.isEmpty())
         {
             Toast.makeText(this, "Bạn phải điền hết ô trống còn lại!", Toast.LENGTH_SHORT).show();
@@ -103,12 +113,14 @@ public class AddRecipeActivity extends AppCompatActivity {
 
             SQLiteDatabase db = databaseHelper.getWritableDatabase();
             ContentValues values = new ContentValues();
-            values.put("recipe_name", title);
+            values.put("recipe_name", name);
+            values.put("difficulty", difficulty);
             values.put("ingredients", ingredients);
             values.put("steps", steps);
             values.put("user_id", userId); // Store user_id
             values.put("cate", categoryValue);  // Store category
             values.put("img_src", urlImg);
+            values.put("time", time);
 
             long newRowId = db.insert("recipes", null, values);
             if (newRowId == -1) {
@@ -120,12 +132,13 @@ public class AddRecipeActivity extends AppCompatActivity {
 
         //Chuyển sang RecipePostActivity
         Intent intent = new Intent(AddRecipeActivity.this, RecipePostActivity.class);
-        intent.putExtra("title", title);
+        intent.putExtra("name", name);
         intent.putExtra("difficulty", difficulty);
         intent.putExtra("ingredients", ingredients);
         intent.putExtra("steps", steps);
         intent.putExtra("time", time);
         intent.putExtra("imageUrl", urlImg);
         startActivity(intent);
+        finish();
     }
 }

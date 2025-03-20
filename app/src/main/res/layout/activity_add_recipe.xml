@@ -27,6 +27,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Tên công thức"
+            android:inputType="text"
+            android:importantForAccessibility="yes"
             android:textSize="18sp"
             android:padding="8dp"
             android:background="@android:drawable/edit_text" />
@@ -37,6 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Độ khó"
+            android:inputType="text"
             android:padding="8dp"
             android:background="@android:drawable/edit_text" />
 
@@ -55,8 +58,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nhập nguyên liệu, mỗi dòng một nguyên liệu"
-            android:minLines="3"
-            android:maxLines="5"
+            android:minLines="1"
+            android:maxLines="6"
+            android:scrollbars="vertical"
+            android:inputType="textMultiLine"
+            android:gravity="top"
+            android:overScrollMode="always"
+            android:imeOptions="actionDone"
             android:padding="8dp"
             android:background="@android:drawable/edit_text" />
 
@@ -66,8 +74,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nhập hướng dẫn từng bước"
-            android:minLines="5"
-            android:maxLines="10"
+            android:minLines="3"
+            android:maxLines="7"
+            android:scrollbars="vertical"
+            android:inputType="textMultiLine"
+            android:gravity="top"
+            android:overScrollMode="always"
+            android:imeOptions="actionDone"
             android:padding="8dp"
             android:background="@android:drawable/edit_text" />
 

@@ -24,6 +24,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COT_STEPS = "steps";
     public static final String COT_IMG_URL = "img_src";
     public static final String COT_CATEGORY = "cate";
+    public static final String COT_TIME = "time";
+    public static final String COT_DOKHO = "difficulty";
 
     // Tạo bảng Users
     private static final String CREATE_BANG_USERS = "CREATE TABLE " + BANG_USERS + " (" +
@@ -39,7 +41,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             COT_USER_ID + " INTEGER NOT NULL, " +
             COT_IMG_URL + " TEXT, " +
             COT_CATEGORY + " INTEGER NOT NULL, " +
-            "FOREIGN KEY(" + COT_USER_ID + ") REFERENCES " + BANG_USERS + "(" + COT_USER_ID + "))";
+            COT_TIME + " INTEGER NOT NULL, " +
+            COT_DOKHO + " TEXT NOT NULL, " +
+            "FOREIGN KEY(" + COT_USER_ID + ") REFERENCES " + BANG_USERS + "( " + COT_USER_ID + "))";
 
     public DatabaseHelper(Context context) {
         super(context, TEN_DATABASE, null, DATABASE_VERSION);
@@ -53,9 +57,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + BANG_RECIPES);
-        db.execSQL("DROP TABLE IF EXISTS " + BANG_USERS);
-        onCreate(db);
+
     }
 
     // Trích hoặc thêm user_id mỗi khi đăng nhập

@@ -24,7 +24,6 @@
         <activity android:name=".RecipePostActivity" />
         <activity android:name=".SignupActivity"/>
         <activity android:name=".RecipeDetailActivity"/>
-        <activity android:name=".ViewPostActivity"/>
         <activity android:name=".MainActivity"/>
         <activity
             android:name=".LoginActivity"

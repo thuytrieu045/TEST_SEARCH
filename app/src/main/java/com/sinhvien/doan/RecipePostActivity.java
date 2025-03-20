@@ -33,7 +33,7 @@ public class RecipePostActivity extends AppCompatActivity {
         if (intent != null) {
             String name = intent.getStringExtra("title");
             String difficulty = intent.getStringExtra("difficulty");
-            String time = intent.getStringExtra("time");
+            int time = intent.getIntExtra("time", -1);
             String ingredients = intent.getStringExtra("ingredients");
             String steps = intent.getStringExtra("steps");
             String imageUrl = intent.getStringExtra("imageUrl");
@@ -42,7 +42,7 @@ public class RecipePostActivity extends AppCompatActivity {
             String existingText = txtDifficulty.getText().toString();
             txtDifficulty.setText(existingText + " " + difficulty);
             existingText = txtTime.getText().toString();
-            txtTime.setText(existingText + " " + time);
+            txtTime.setText(existingText + " " + time + " phút");
             txtIngredients.setText(ingredients);
             txtSteps.setText(steps);
 
@@ -53,7 +53,6 @@ public class RecipePostActivity extends AppCompatActivity {
                 imgRecipe.setImageResource(R.drawable.dessert);
             }
         }
-
         btnBack.setOnClickListener(v -> finish());
     }
 }

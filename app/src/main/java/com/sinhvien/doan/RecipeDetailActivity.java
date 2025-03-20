@@ -28,13 +28,13 @@ public class RecipeDetailActivity extends AppCompatActivity {
     private void loadRecipeDetails(int recipeId) {
         Recipe recipe = myDatabase.getRecipeById(recipeId);
         if (recipe != null) {
-            // ✅ Show Post in ViewPostActivity
+            // Hiển thị thông tin trong RecipePostActivity
             Intent intent = new Intent(RecipeDetailActivity.this, RecipePostActivity.class);
             intent.putExtra("title", recipe.getRecipeName());
-            intent.putExtra("difficulty", "Trung bình");  // You can set real difficulty here
+            intent.putExtra("difficulty", recipe.getDifficulty());
             intent.putExtra("ingredients", recipe.getIngredients());
             intent.putExtra("steps", recipe.getSteps());
-            intent.putExtra("time", "40 phút");  // Set real time if available
+            intent.putExtra("time", recipe.getTime());
             intent.putExtra("imageUrl", recipe.getImgSource());
             startActivity(intent);
             finish();
