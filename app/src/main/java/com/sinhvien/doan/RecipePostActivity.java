@@ -42,7 +42,12 @@ public class RecipePostActivity extends AppCompatActivity {
             String existingText = txtDifficulty.getText().toString();
             txtDifficulty.setText(existingText + " " + difficulty);
             existingText = txtTime.getText().toString();
-            txtTime.setText(existingText + " " + time + " phút");
+            if(time > 60) {
+                txtTime.setText(existingText + " " + time / 60 + " giờ " + time % 60 + " phút");
+            }
+            else {
+                txtTime.setText(existingText + " " + time + " phút");
+            }
             txtIngredients.setText(ingredients);
             txtSteps.setText(steps);
 
