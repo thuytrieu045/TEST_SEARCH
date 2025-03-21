@@ -72,8 +72,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
         } else {
             String lowerCaseQuery = query.toLowerCase();
             for (Recipe recipe : lstRecipeFull) {
-                if (recipe.getRecipeName().toLowerCase().contains(lowerCaseQuery) ||
-                        recipe.getIngredients().toLowerCase().contains(lowerCaseQuery)) {
+                if (recipe.getRecipeName().toLowerCase().contains(lowerCaseQuery)) {
                     lstRecipe.add(recipe);
                 }
             }

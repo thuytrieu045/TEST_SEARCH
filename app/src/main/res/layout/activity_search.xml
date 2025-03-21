@@ -35,6 +35,15 @@
             android:background="@android:drawable/editbox_background"
             android:drawableLeft="@android:drawable/ic_search_category_default"/>
 
+        <!-- Nút lọc bài đăng -->
+        <Button
+            android:id="@+id/btnFilter"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:text="All"
+            android:textSize="10dp"
+            app:cornerRadius="15dp" />
     </LinearLayout>
 
     <!-- Danh sách kết quả tìm kiếm -->

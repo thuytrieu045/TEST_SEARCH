@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
+    private Button btnFilter;
     private ProductAdapter adapter;
     private RecipeAdapter recipeAdapter;
     private List<Product> productList;
@@ -38,6 +40,7 @@ public class SearchActivity extends AppCompatActivity {
         recipesList = new ArrayList<Recipe>();
         loadProducts(); // Gọi hàm để load dữ liệu mẫu
         myDataBase = new MyDataBase(this);
+        btnFilter = findViewById(R.id.btnFilter);
 
         boolean hasRecipePosts = loadRecipes(); // Hàm kiểm tra tồn tại bài đăng công thức
 
@@ -69,6 +72,21 @@ public class SearchActivity extends AppCompatActivity {
 
         // Nút quay lại trang Home
         btnBackToHome.setOnClickListener(v -> finish());
+
+        boolean[] isAll = {true};
+        // Nút lọc bài đăng
+        btnFilter.setOnClickListener(v -> {
+            isAll[0] = !isAll[0];
+
+            if(isAll[0]) {
+                btnFilter.setText("All");
+                showRecipes(isAll[0]);
+            }
+            else {
+                btnFilter.setText("My posts");
+                showRecipes(isAll[0]);
+            }
+        });
     }
 
     private void loadProducts() {
@@ -112,5 +130,14 @@ public class SearchActivity extends AppCompatActivity {
             cursor.close();
         }
         return !recipesList.isEmpty();
+    }
+
+    private void showRecipes(boolean isALl) {
+        if(isALl) {
+            recyclerView.setAdapter(new ConcatAdapter(adapter, recipeAdapter));
+        }
+        else {
+            recyclerView.setAdapter(recipeAdapter);
+        }
     }
 }
