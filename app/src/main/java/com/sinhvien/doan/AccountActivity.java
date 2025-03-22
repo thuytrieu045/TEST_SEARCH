@@ -51,6 +51,7 @@ public class AccountActivity extends AppCompatActivity {
         });
     }
 
+    // Hiển thị xác nhận đăng xuất
     private void showLogoutMessage() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Logout");

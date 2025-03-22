@@ -42,9 +42,9 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
 
         // Load image using Glide
         Glide.with(context)
-                .load(item.getImgSource()) // Assuming getImageUrl() is added in the Recipe class
-                .placeholder(R.drawable.dessert) // Optional placeholder
-                .error(R.drawable.donut_icon) // Optional error image
+                .load(item.getImgSource()) // Upload ảnh bằng URL
+                .placeholder(R.drawable.dessert) // Thay thế không có URL của ảnh
+                .error(R.drawable.donut_icon) // Thay thế ảnh lỗi
                 .into(holder.imAvatar);
 
         holder.imAvatar.setOnClickListener(v -> {
@@ -65,6 +65,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
         return lstRecipe.size();
     }
 
+    // dùng phương thức filter() để tìm tên công thức
     public void filter(String query) {
         lstRecipe.clear();
         if (query.isEmpty()) {

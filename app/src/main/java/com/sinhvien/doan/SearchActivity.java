@@ -110,6 +110,7 @@ public class SearchActivity extends AppCompatActivity {
         }
     }
 
+    // Sử dụng loadRecipes() để tải lên các bài viết đã đăng
     private boolean loadRecipes() {
         Cursor cursor = myDataBase.layTatCaDuLieu();
         if(cursor != null && cursor.moveToFirst()) {

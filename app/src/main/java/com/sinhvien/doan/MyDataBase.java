@@ -12,6 +12,7 @@ public class MyDataBase {
         dbHelper = new DatabaseHelper(context);
     }
 
+    // Lấy tất cả dữ liệu bằng phương thức layTatCaDuLieu()
     public Cursor layTatCaDuLieu() {
         SQLiteDatabase database = dbHelper.getReadableDatabase();
         String[] cot = {
@@ -77,6 +78,7 @@ public class MyDataBase {
         );
     }
 
+    //Chọn lấy công thức theo recipe_id
     public Recipe getRecipeById(int recipeId) {
         SQLiteDatabase database = dbHelper.getReadableDatabase();
         Recipe recipe = null;
@@ -116,6 +118,7 @@ public class MyDataBase {
         return recipe;
     }
 
+    // Chọn lấy công thức theo category
     public Cursor getRecipeByCategory(int categoryId) {
         SQLiteDatabase database = dbHelper.getReadableDatabase();
         return database.query(
