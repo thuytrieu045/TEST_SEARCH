@@ -27,6 +27,8 @@ public class LoginActivity extends AppCompatActivity {
     private TextView txtSignup,txtForgerPass;
     private FirebaseAuth mAuth;
 
+
+    // Kiểm tra cho vô trang home nếu đã login
     public void onStart()  {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
@@ -37,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    // Tải lên trang giao diện để đăng nhập
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,6 +102,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+    // Kiểm tra độ hợp lý của email
     private boolean isValidEmail(String email) {
         return Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }

@@ -87,7 +87,7 @@ public class AddRecipeActivity extends AppCompatActivity {
         }
 
 
-        if(name.isEmpty() || difficulty.isEmpty() || time == 0 || ingredients.isEmpty() || steps.isEmpty()
+        if(name.isEmpty() || difficulty.isEmpty() || ingredients.isEmpty() || steps.isEmpty()
         || selectedCategory.isEmpty())
         {
             Toast.makeText(this, "Bạn phải điền hết ô trống còn lại!", Toast.LENGTH_SHORT).show();
@@ -108,8 +108,8 @@ public class AddRecipeActivity extends AppCompatActivity {
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
-            String firebaseUid = user.getUid(); // Get Firebase UID
-            int userId = databaseHelper.getUserId(firebaseUid); // Convert to integer user_id
+            String firebaseUid = user.getUid(); // Lấy Firebase UID
+            int userId = databaseHelper.getUserId(firebaseUid); // Chuyển sang user_id
 
             SQLiteDatabase db = databaseHelper.getWritableDatabase();
             ContentValues values = new ContentValues();
@@ -117,8 +117,8 @@ public class AddRecipeActivity extends AppCompatActivity {
             values.put("difficulty", difficulty);
             values.put("ingredients", ingredients);
             values.put("steps", steps);
-            values.put("user_id", userId); // Store user_id
-            values.put("cate", categoryValue);  // Store category
+            values.put("user_id", userId);
+            values.put("cate", categoryValue);
             values.put("img_src", urlImg);
             values.put("time", time);
 
@@ -132,7 +132,7 @@ public class AddRecipeActivity extends AppCompatActivity {
 
         //Chuyển sang RecipePostActivity
         Intent intent = new Intent(AddRecipeActivity.this, RecipePostActivity.class);
-        intent.putExtra("name", name);
+        intent.putExtra("title", name);
         intent.putExtra("difficulty", difficulty);
         intent.putExtra("ingredients", ingredients);
         intent.putExtra("steps", steps);

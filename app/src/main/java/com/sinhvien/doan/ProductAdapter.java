@@ -63,8 +63,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         } else {
             String lowerCaseQuery = query.toLowerCase();
             for (Product product : lstProductFull) {
-                if (product.getName().toLowerCase().contains(lowerCaseQuery) ||
-                        product.getDescription().toLowerCase().contains(lowerCaseQuery)) {
+                if (product.getName().toLowerCase().contains(lowerCaseQuery)) {
                     lstProduct.add(product);
                 }
             }

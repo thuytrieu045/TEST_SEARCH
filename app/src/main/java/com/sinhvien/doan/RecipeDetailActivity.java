@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class RecipeDetailActivity extends AppCompatActivity {
     private MyDataBase myDatabase;
 
+    // Lấy dữ liệu khi nhấn vào viewHolder trong recyclerView
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +26,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
         }
     }
 
+    // Chuyền data vào RecipePostActivity
     private void loadRecipeDetails(int recipeId) {
         Recipe recipe = myDatabase.getRecipeById(recipeId);
         if (recipe != null) {

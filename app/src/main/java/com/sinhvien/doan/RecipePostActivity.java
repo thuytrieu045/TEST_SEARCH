@@ -28,7 +28,7 @@ public class RecipePostActivity extends AppCompatActivity {
         txtSteps = findViewById(R.id.txtSteps);
         Button btnBack = findViewById(R.id.btnBack);
 
-        // Get data from Intent
+        // Lấy data từ Intent
         Intent intent = getIntent();
         if (intent != null) {
             String name = intent.getStringExtra("title");
@@ -37,6 +37,8 @@ public class RecipePostActivity extends AppCompatActivity {
             String ingredients = intent.getStringExtra("ingredients");
             String steps = intent.getStringExtra("steps");
             String imageUrl = intent.getStringExtra("imageUrl");
+
+        // Hiển thị data vào trong bài đăng
 
             txtRecipeName.setText(name);
             String existingText = txtDifficulty.getText().toString();
