@@ -16,6 +16,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COT_USER_ID = "user_id";
     public static final String COT_FIREBASE_UID = "firebase_uid"; // Firebase UID
 
+    //Bang Product
+    private static final String BANG_PRODUCT = "products";
+    private static final String COT_PRODUCT_ID = "id";
+    private static final String COT_PRODUCT_NAME = "name";
+    private static final String COT_PRODUCT_DESCRIPTION = "description";
+    private static final String COT_PRODUCT_AVATAR = "avatar";
+
     // Bảng Recipes
     public static final String BANG_RECIPES = "recipes";
     public static final String COT_RECIPE_ID = "recipe_id";
@@ -45,6 +52,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             COT_DOKHO + " TEXT NOT NULL, " +
             "FOREIGN KEY(" + COT_USER_ID + ") REFERENCES " + BANG_USERS + "( " + COT_USER_ID + "))";
 
+    //Tao bang Product
+
+    private static final String CREATE_BANG_PRODUCT = "CREATE TABLE " + BANG_PRODUCT + " (" +
+            COT_PRODUCT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            COT_PRODUCT_NAME + " TEXT, " +
+            COT_PRODUCT_DESCRIPTION + " TEXT, " +
+            COT_PRODUCT_AVATAR + " TEXT) ";
+
     public DatabaseHelper(Context context) {
         super(context, TEN_DATABASE, null, DATABASE_VERSION);
     }
@@ -53,11 +68,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_BANG_USERS);
         db.execSQL(CREATE_BANG_RECIPES);
+        db.execSQL(CREATE_BANG_PRODUCT);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("DROP TABLE IF EXISTS " + BANG_PRODUCT);
+        onCreate(db);
     }
 
     // Trích hoặc thêm user_id mỗi khi đăng nhập

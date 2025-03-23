@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.ConcatAdapter;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Category3Activity extends AppCompatActivity {
     private RecyclerView rvListC;
@@ -37,12 +38,18 @@ public class Category3Activity extends AppCompatActivity {
         myDataBase = new MyDataBase(this);
 
         // Load dữ liệu sản phẩm
-        LoadData();
+      //  LoadData();
         boolean hasRecipes = LoadDataRecipe(); // Kiểm tra tồn tại bài đăng
 
         // Cài đặt adapter
-        productAdapter = new ProductAdapter(this, lstProduct);
-        rvListC.setLayoutManager(new LinearLayoutManager(this));
+        lstProduct = ProductDataQuery.getAll(this);
+        productAdapter = new ProductAdapter(lstProduct);
+        productAdapter.setCallback((ProductAdapter.ProductCallback) this);
+//Gắn adapter
+        LinearLayoutManager linearLayoutManager = new
+                LinearLayoutManager(this);
+        rvListC.setAdapter(productAdapter);
+        rvListC.setLayoutManager(linearLayoutManager);
 
         if(hasRecipes) {
             recipeAdapter = new RecipeAdapter(this, lstRecipe);
@@ -54,13 +61,13 @@ public class Category3Activity extends AppCompatActivity {
     }
 
     // Load dữ liệu Product
-    private void LoadData() {
-        lstProduct.add(new Product("9", "Bánh kem trà xanh", "Bánh kem trà xanh là bánh được làm từ bột trà xanh Nhật Bản (matcha), mang hương vị thanh nhẹ, hơi đắng nhưng hài hòa với vị ngọt.", "matcha.jpg", R.drawable.matcha));
-        lstProduct.add(new Product("10", "Bánh kem xoài phủ lớp kem cheese", "Bánh kem xoài phủ lớp kem cheese là bánh kem xoài mềm mịn, thường có lớp bánh bông lan xốp nhẹ, xen kẽ với kem tươi béo ngậy và xoài tươi ngọt thanh.", "mango.jpg", R.drawable.mango));
-        lstProduct.add(new Product("11", "Bánh kem trái cây", "Bánh kem trái cây là loại bánh bông lan mềm mịn, phủ lớp kem tươi béo ngậy và trang trí với các loại trái cây tươi như dâu, kiwi, xoài, việt quất,… tạo hương vị thanh mát, ngọt dịu.", "traicay.jpg", R.drawable.traicay));
-        lstProduct.add(new Product("12", "Bánh kem chanh tươi ", "Bánh kem chanh tươi có lớp bánh mềm mịn, vị chua thanh mát, kết hợp kem béo ngậy và sốt chanh thơm dịu. ", "lemoncake.jpg", R.drawable.lemoncake));
+    /*private void LoadData() {
+        lstProduct.add(new Product(9, "Bánh kem trà xanh", "Bánh kem trà xanh là bánh được làm từ bột trà xanh Nhật Bản (matcha), mang hương vị thanh nhẹ, hơi đắng nhưng hài hòa với vị ngọt.", "matcha.jpg", R.drawable.matcha));
+        lstProduct.add(new Product(10, "Bánh kem xoài phủ lớp kem cheese", "Bánh kem xoài phủ lớp kem cheese là bánh kem xoài mềm mịn, thường có lớp bánh bông lan xốp nhẹ, xen kẽ với kem tươi béo ngậy và xoài tươi ngọt thanh.", "mango.jpg", R.drawable.mango));
+        lstProduct.add(new Product(11, "Bánh kem trái cây", "Bánh kem trái cây là loại bánh bông lan mềm mịn, phủ lớp kem tươi béo ngậy và trang trí với các loại trái cây tươi như dâu, kiwi, xoài, việt quất,… tạo hương vị thanh mát, ngọt dịu.", "traicay.jpg", R.drawable.traicay));
+        lstProduct.add(new Product(12, "Bánh kem chanh tươi ", "Bánh kem chanh tươi có lớp bánh mềm mịn, vị chua thanh mát, kết hợp kem béo ngậy và sốt chanh thơm dịu. ", "lemoncake.jpg", R.drawable.lemoncake));
 
-    }
+    }*/
 
     // Load dữ liệu Recipe từ Category 3
     private boolean LoadDataRecipe() {

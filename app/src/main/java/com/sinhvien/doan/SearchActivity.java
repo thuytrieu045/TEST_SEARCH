@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchActivity extends AppCompatActivity {
+public abstract class SearchActivity extends AppCompatActivity implements ProductAdapter.ProductCallback {
     private Button btnFilter;
     private ProductAdapter adapter;
     private RecipeAdapter recipeAdapter;
@@ -38,7 +38,7 @@ public class SearchActivity extends AppCompatActivity {
         // Khởi tạo danh sách sản phẩm
         productList = new ArrayList<Product>();
         recipesList = new ArrayList<Recipe>();
-        loadProducts(); // Gọi hàm để load dữ liệu mẫu
+       // loadProducts(); // Gọi hàm để load dữ liệu mẫu
         myDataBase = new MyDataBase(this);
         btnFilter = findViewById(R.id.btnFilter);
 
@@ -46,7 +46,7 @@ public class SearchActivity extends AppCompatActivity {
 
         // Cấu hình RecyclerView
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new ProductAdapter(this, productList);
+        adapter = new ProductAdapter(productList, this);
         if(hasRecipePosts) {
             recipeAdapter = new RecipeAdapter(this, recipesList);
             recyclerView.setAdapter(new ConcatAdapter(adapter, recipeAdapter));
@@ -89,7 +89,7 @@ public class SearchActivity extends AppCompatActivity {
         });
     }
 
-    private void loadProducts() {
+    /*private void loadProducts() {
         String[][] products = {
                 {"1", "Choco", "Bánh Choco là bánh quy phủ sô cô la, thường có nhân kem hoặc mềm bên trong.", "banhchoco.jpg", String.valueOf(R.drawable.banhchoco)},
                 {"2", "Flan", "Bánh caramel mềm mịn, làm từ trứng, sữa và đường.", "flan.jpg", String.valueOf(R.drawable.flan)},
@@ -106,9 +106,9 @@ public class SearchActivity extends AppCompatActivity {
         };
 
         for (String[] product : products) {
-            productList.add(new Product(product[0], product[1], product[2], product[3], Integer.parseInt(product[4])));
+            productList.add(new Product(Integer.parseInt(product[0]), product[1], product[2], product[3], Integer.parseInt(product[4])));
         }
-    }
+    }*/
 
     // Sử dụng loadRecipes() để tải lên các bài viết đã đăng
     private boolean loadRecipes() {

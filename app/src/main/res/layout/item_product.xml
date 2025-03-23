@@ -20,8 +20,8 @@
     android:background="#FFFFFF"
     android:orientation="horizontal">
         <ImageButton
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:id="@+id/ivAvatar"
             android:src="@drawable/choco"
             android:scaleType="centerCrop"/>
@@ -46,6 +46,26 @@
             android:textSize="14sp"
             android:text="Description" />
 
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_margin="10dp"
+               android:layout_gravity="center"
+               >
+               <ImageView
+                   android:layout_width="40dp"
+                   android:layout_height="40dp"
+                   android:layout_marginRight="10dp"
+                   android:id="@+id/ivEdit"
+                   android:src="@drawable/baseline_auto_fix_high_24"
+                   />
+               <ImageView
+                   android:layout_width="40dp"
+                   android:layout_height="40dp"
+                   android:id="@+id/ivDelete"
+                   android:src="@drawable/baseline_auto_delete_24"
+                   />
+           </LinearLayout>
 
        </LinearLayout>
 </LinearLayout>

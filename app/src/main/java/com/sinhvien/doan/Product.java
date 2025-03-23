@@ -1,14 +1,14 @@
 package com.sinhvien.doan;
 
 public class Product {
-    private String id;
+    private int id;
     private String name,imgURL;
     private String description;
     private String avatar;
     private int imageResource; // Thêm biến hình ảnh
 
     // Constructor đầy đủ
-    public Product(String id, String name, String description, String avatar, int imageResource) {
+    public Product(int id, String name, String description, String avatar, int imageResource) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -17,22 +17,22 @@ public class Product {
     }
 
     // Constructor đơn giản hơn
-    public Product(int id, String name, String description, int imageResource) {
+   /* public Product(int id, String name, String description, int imageResource) {
         this.id = String.valueOf(id);
         this.name = name;
         this.description = description;
         this.avatar = ""; // Nếu không có ảnh URL
         this.imageResource = imageResource;
-    }
+    }*/
 
     //Constructor tạm thời
 
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

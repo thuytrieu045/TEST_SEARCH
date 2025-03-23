@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.ConcatAdapter;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Category2Activity extends AppCompatActivity {
@@ -38,12 +39,18 @@ public class Category2Activity extends AppCompatActivity {
         myDataBase = new MyDataBase(this); // Khởi tạo DB
 
         // Load dữ liệu sản phẩm
-        LoadData();
+        //LoadData();
         boolean hasRecipes = LoadDataRecipe(); // Kiểm tra bài đăng
 
         // Cài đặt adapter
-        productAdapter = new ProductAdapter(this, lstProduct);
-        rvListC.setLayoutManager(new LinearLayoutManager(this));
+        lstProduct = ProductDataQuery.getAll(this);
+        productAdapter = new ProductAdapter(lstProduct);
+        productAdapter.setCallback((ProductAdapter.ProductCallback) this);
+//Gắn adapter
+        LinearLayoutManager linearLayoutManager = new
+                LinearLayoutManager(this);
+        rvListC.setAdapter(productAdapter);
+        rvListC.setLayoutManager(linearLayoutManager);
 
         if(hasRecipes) { // Kiểm tra nếu có tồn tại bài đăng
             recipeAdapter = new RecipeAdapter(this, lstRecipe);
@@ -55,12 +62,12 @@ public class Category2Activity extends AppCompatActivity {
     }
 
     // Load dữ liệu Product
-    private void LoadData() {
-        lstProduct.add(new Product("5", "Bánh mì nướng phủ bơ nghiền và trứng", "Bánh mì nướng phủ bơ nghiền, trứng luộc lòng đào thái lát, rắc tiêu đen và ớt bột, tạo hương vị béo ngậy, thơm ngon. ", "trungbo.jpg", R.drawable.trungbo));
-        lstProduct.add(new Product("6", "Bánh mì cá hồi", "Bánh bagel hạt giòn thơm, kẹp kem phô mai, bơ lát và cá hồi xông khói, tạo hương vị béo ngậy, mặn mà. ", "bothit.jpg", R.drawable.bothit));
-        lstProduct.add(new Product("7", "bánh mì xông khói", "Bagel hạt giòn, kẹp kem phô mai, cá hồi xông khói, hành tím và nụ bạch hoa, tạo hương vị béo, mặn và thanh nhẹ", "xongkhoi.jpg", R.drawable.xongkhoi));
-        lstProduct.add(new Product("8", "bánh mì tôm hùm", "Bánh mì nướng giòn phủ sốt đỏ đậm đà, tôm hùm tươi ngọt, thịt cua thơm béo và rau xanh tươi mát, tạo hương vị hài hòa và hấp dẫn", "tom.jpg", R.drawable.tom));
-    }
+   /* private void LoadData() {
+        lstProduct.add(new Product(5, "Bánh mì nướng phủ bơ nghiền và trứng", "Bánh mì nướng phủ bơ nghiền, trứng luộc lòng đào thái lát, rắc tiêu đen và ớt bột, tạo hương vị béo ngậy, thơm ngon. ", "trungbo.jpg", R.drawable.trungbo));
+        lstProduct.add(new Product(6, "Bánh mì cá hồi", "Bánh bagel hạt giòn thơm, kẹp kem phô mai, bơ lát và cá hồi xông khói, tạo hương vị béo ngậy, mặn mà. ", "bothit.jpg", R.drawable.bothit));
+        lstProduct.add(new Product(7, "bánh mì xông khói", "Bagel hạt giòn, kẹp kem phô mai, cá hồi xông khói, hành tím và nụ bạch hoa, tạo hương vị béo, mặn và thanh nhẹ", "xongkhoi.jpg", R.drawable.xongkhoi));
+        lstProduct.add(new Product(8, "bánh mì tôm hùm", "Bánh mì nướng giòn phủ sốt đỏ đậm đà, tôm hùm tươi ngọt, thịt cua thơm béo và rau xanh tươi mát, tạo hương vị hài hòa và hấp dẫn", "tom.jpg", R.drawable.tom));
+    }*/
 
     // Load dữ liệu Recipe từ Category2
     private boolean LoadDataRecipe() {
